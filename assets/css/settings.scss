@@ -1,0 +1,99 @@
+@use 'sass:math';
+$contentWrap: 1080px;
+$contentWrap2: 1440px;
+$contentWrap3: 1155px;
+$contentWrap4: 900px;
+$contentWrap5: 1300px;
+$mob-media: 768px;
+$mobm-media: 640px;
+$mobms-media: 550px;
+$mobs-media: 481px;
+$fontfamily: 'Roboto', 'Noto Sans SC', sans-serif, 'Microsoft Jhenghei';
+$fontfamily2: 'Roboto', 'Noto Serif TC', sans-serif, 'Microsoft Jhenghei';
+$fontfamily3: 'Roboto', 'El Messiri', sans-serif, 'Microsoft Jhenghei';
+$fontfamily4: 'Roboto', 'Noto Sans TC', sans-serif, 'Microsoft Jhenghei';
+$fontfamily5: 'Roboto', 'El Messiri', 'Noto Serif TC', sans-serif,
+  'Microsoft Jhenghei';
+$fontfamily6: 'Roboto', 'Noto Serif SC', sans-serif, 'Microsoft Jhenghei';
+$fontfamily7: 'Roboto', 'Playfair Display', 'Noto Serif SC', sans-serif,
+  'Microsoft Jhenghei';
+@mixin contentWrap() {
+  @media all and (max-width: $contentWrap) {
+    @content;
+  }
+}
+@mixin contentWrap2() {
+  @media all and (max-width: $contentWrap2) {
+    @content;
+  }
+}
+@mixin contentWrap3() {
+  @media all and (max-width: $contentWrap3) {
+    @content;
+  }
+}
+@mixin contentWrap4() {
+  @media all and (max-width: $contentWrap4) {
+    @content;
+  }
+}
+@mixin contentWrap5() {
+  @media all and (max-width: $contentWrap5) {
+    @content;
+  }
+}
+@mixin mob-width() {
+  @media all and (max-width: $mob-media) {
+    @content;
+  }
+}
+@mixin mobm-width() {
+  @media all and (max-width: $mobm-media) {
+    @content;
+  }
+}
+@mixin mobms-width() {
+  @media all and (max-width: $mobms-media) {
+    @content;
+  }
+}
+@mixin mobs-width() {
+  @media all and (max-width: $mobs-media) {
+    @content;
+  }
+}
+
+@mixin keyframes($name) {
+  @keyframes #{$name} {
+    @content;
+  }
+}
+@mixin animate($animation, $duration, $method, $delay, $times) {
+  animation: $animation $duration $method $delay $times;
+}
+
+@mixin getImgBoxSize($w, $h, $containerW) {
+  @if $containerW != -1 {
+    width: math.div($w, $containerW) * 100%;
+  }
+  &:after {
+    content: '';
+    display: block;
+    padding-bottom: math.div($h, $w) * 100%;
+  }
+}
+@mixin getImgItem($img) {
+  @include btnHoverTransition;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  @if $img != '' {
+    background: url($img) no-repeat center;
+    background-size: 100%;
+  }
+}
+@function vw($px, $screen-size) {
+  @return math.div($px * 100, $screen-size) + vw;
+}

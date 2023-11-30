@@ -1,0 +1,1 @@
+robocopy .\dist  \\OBSystem\Web_Source\KWUAT\SANDBOX\Landing\events\fe22072201 /mir

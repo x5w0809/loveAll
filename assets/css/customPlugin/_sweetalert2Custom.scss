@@ -1,0 +1,33 @@
+﻿.swal2-container {
+  &.ob_sweetalert2 {
+    .swal2-popup {
+      border-radius: 0;
+    }
+    &.swal2-backdrop-show,
+    &.swal2-noanimation {
+      background: rgba(0, 0, 0, 0.7);
+    }
+    .swal2-styled {
+      &.swal2-confirm {
+        border-radius: 0px;
+        background-color: #333;
+        padding: 4px 10px 7px;
+        color: #fff;
+        font-size: 18px;
+        text-align: center;
+        width: 225px;
+        max-width: 100%;
+        font-family: $fontfamily;
+        font-weight: 500;
+        transition: all 0.25s ease;
+
+        &:hover {
+          background-color: #2da0a0;
+        }
+        &:focus {
+          box-shadow: none !important;
+        }
+      }
+    }
+  }
+}

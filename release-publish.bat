@@ -1,0 +1,1 @@
+robocopy .\dist  \\OBSystem\Web_Source\KWUAT\RELEASE\Landing\events\fe22072201 /mir

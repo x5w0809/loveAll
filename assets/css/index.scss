@@ -1,0 +1,3997 @@
+@mixin btnHoverTransition() {
+    transition: all 0.25s ease;
+}
+@font-face {
+    font-family: mplus;
+    src: url('../font/MPLUSRounded1c-Medium.ttf');
+}
+@font-face {
+    font-family: acumin;
+    src: url('../font/FontsFree-Net-Acumin-Pro-Book.ttf');
+}
+* {
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+body {
+    background-color: #ffe6b3;
+    // background-image: url(#{$imgCdnPath +'pc/bg-body.jpg'});
+    // background-size: cover;
+    // background-position: center top;
+    // background-repeat: no-repeat;
+}
+.mainPage {
+    display: block;
+}
+section {
+    position: relative;
+}
+
+section {
+    position: relative;
+    z-index: 1;
+    &.banner {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+        $boxWidth_pc: 1920px;
+        $boxHeight_pc: 820px;
+        $boxWidth_mb: $mobm-media;
+        $boxHeight_mb: 1060px;
+        width: 100%;
+        z-index: 9;
+        pointer-events: none;
+        background: url(#{$imgCdnPath + 'pc/bannerBg.jpg'}) no-repeat center;
+        background-size: 100%;
+        > .height {
+            display: block;
+            padding-bottom: #{math.div($boxHeight_pc, $boxWidth_pc) * 100%};
+            @include mob-width {
+                padding-bottom: #{math.div($boxHeight_mb, $boxWidth_mb) * 100%};
+            }
+        }
+        @include mob-width {
+            background: url(#{$imgCdnPath + 'mb/220815-love-layout-MB_01.jpg'}) no-repeat;
+            background-position: center bottom;
+        }
+        [data-anime-stuff] {
+            perspective: 1500px;
+        }
+        [data-anime] {
+            perspective: 1500px;
+            > * {
+                perspective: 1500px;
+                perspective-origin: 50% 40%;
+            }
+            .obj {
+                // filter: brightness(0);
+                // opacity: 0.5;
+                // transition: all 0.25s ease;
+            }
+        }
+        .logo {
+            &-anime {
+                position: absolute;
+                left: #{math.div(100px, $boxWidth_pc) * 100%};
+                top: #{math.div(41px, $boxHeight_pc) * 100%};
+                $w: 482px;
+                $h: 50px;
+                @include getImgBoxSize($w, $h, $boxWidth_pc);
+                display: block;
+                @include mob-width {
+                    left: #{math.div(30px, $boxWidth_mb) * 100%};
+                    top: #{math.div(59px, $boxHeight_mb) * 100%};
+                    $w: 322px;
+                    $h: 34px;
+                    @include getImgBoxSize($w, $h, $boxWidth_mb);
+                }
+                &-obj {
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    background: url(#{$imgCdnPath + 'pc/logo.png'}) no-repeat center;
+                    background-size: 100%;
+                    @include mob-width {
+                        background: url(#{$imgCdnPath + 'pc/logo.png'}) no-repeat center;
+                        background-size: 100%;
+                    }
+                }
+            }
+        }
+        .model {
+            &-anime {
+                position: absolute;
+                left: #{math.div(235px, $boxWidth_pc) * 100%};
+                top: #{math.div(170px, $boxHeight_pc) * 100%};
+                $w: 883px;
+                $h: 618px;
+                @include getImgBoxSize($w, $h, $boxWidth_pc);
+                display: block;
+                @include mob-width {
+                    left: #{math.div(23px, $boxWidth_mb) * 100%};
+                    top: #{math.div(645px, $boxHeight_mb) * 100%};
+                    $w: 602px;
+                    $h: 420px;
+                    @include getImgBoxSize($w, $h, $boxWidth_mb);
+                }
+                &-obj {
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    background: url(#{$imgCdnPath + 'pc/model.png'}) no-repeat center;
+                    background-size: 100%;
+                    @include mob-width {
+                        background: url(#{$imgCdnPath + 'pc/model.png'}) no-repeat center;
+                        background-size: 100%;
+                    }
+                }
+            }
+        }
+        .sign {
+            &-anime {
+                position: absolute;
+                left: #{math.div(321px, $boxWidth_pc) * 100%};
+                top: #{math.div(200px, $boxHeight_pc) * 100%};
+                $w: 155px;
+                $h: 139px;
+                @include getImgBoxSize($w, $h, $boxWidth_pc);
+                display: block;
+                @include mob-width {
+                    left: #{math.div(82px, $boxWidth_mb) * 100%};
+                    top: #{math.div(665px, $boxHeight_mb) * 100%};
+                    $w: 118px;
+                    $h: 108px;
+                    @include getImgBoxSize($w, $h, $boxWidth_mb);
+                }
+                &-obj {
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    background: url(#{$imgCdnPath + 'pc/sign.png'}) no-repeat center;
+                    background-size: 100%;
+                    @include mob-width {
+                        background: url(#{$imgCdnPath + 'pc/sign.png'}) no-repeat center;
+                        background-size: 100%;
+                    }
+                }
+            }
+        }
+        .moon {
+            &-anime {
+                position: absolute;
+                left: #{math.div(99px, $boxWidth_pc) * 100%};
+                top: #{math.div(323px, $boxHeight_pc) * 100%};
+                $w: 118px;
+                $h: 137px;
+                @include getImgBoxSize($w, $h, $boxWidth_pc);
+                display: block;
+                @include mob-width {
+                    left: #{math.div(26px, $boxWidth_mb) * 100%};
+                    top: #{math.div(506px, $boxHeight_mb) * 100%};
+                    $w: 77px;
+                    $h: 91px;
+                    @include getImgBoxSize($w, $h, $boxWidth_mb);
+                }
+                &-obj {
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    background: url(#{$imgCdnPath + 'pc/moon.png'}) no-repeat center;
+                    background-size: 100%;
+                    @include mob-width {
+                        background: url(#{$imgCdnPath + 'pc/moon.png'}) no-repeat center;
+                        background-size: 100%;
+                    }
+                }
+            }
+        }
+        .sun {
+            &-anime {
+                position: absolute;
+                left: #{math.div(1680px, $boxWidth_pc) * 100%};
+                top: #{math.div(73px, $boxHeight_pc) * 100%};
+                $w: 163px;
+                $h: 150px;
+                @include getImgBoxSize($w, $h, $boxWidth_pc);
+                display: block;
+                @include mob-width {
+                    left: #{math.div(507px, $boxWidth_mb) * 100%};
+                    top: #{math.div(40px, $boxHeight_mb) * 100%};
+                    $w: 91px;
+                    $h: 84px;
+                    @include getImgBoxSize($w, $h, $boxWidth_mb);
+                }
+                &-obj {
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    background: url(#{$imgCdnPath + 'pc/sun.png'}) no-repeat center;
+                    background-size: 100%;
+                    @include mob-width {
+                        background: url(#{$imgCdnPath + 'pc/sun.png'}) no-repeat center;
+                        background-size: 100%;
+                    }
+                }
+            }
+        }
+        .bgIcon {
+            @for $i from 1 through 3 {
+                .bgIcon__#{$i} {
+                    &-anime {
+                        position: absolute;
+                        display: block;
+                        @if $i == 1 {
+                            left: #{math.div(749px, $boxWidth_pc) * 100%};
+                            top: #{math.div(179px, $boxHeight_pc) * 100%};
+                            $w: 63px;
+                            $h: 60px;
+                            @include getImgBoxSize($w, $h, $boxWidth_pc);
+                            @include mob-width {
+                                left: #{math.div(517px, $boxWidth_mb) * 100%};
+                                top: #{math.div(659px, $boxHeight_mb) * 100%};
+                                $w: 45px;
+                                $h: 44px;
+                                @include getImgBoxSize($w, $h, $boxWidth_mb);
+                            }
+                        } @else if $i == 2 {
+                            left: #{math.div(820px, $boxWidth_pc) * 100%};
+                            top: #{math.div(109px, $boxHeight_pc) * 100%};
+                            $w: 48px;
+                            $h: 78px;
+                            @include getImgBoxSize($w, $h, $boxWidth_pc);
+                            @include mob-width {
+                                left: #{math.div(564px, $boxWidth_mb) * 100%};
+                                top: #{math.div(611px, $boxHeight_mb) * 100%};
+                                $w: 35px;
+                                $h: 57px;
+                                @include getImgBoxSize($w, $h, $boxWidth_mb);
+                            }
+                        } @else if $i == 3 {
+                            left: #{math.div(864px, $boxWidth_pc) * 100%};
+                            top: #{math.div(252px, $boxHeight_pc) * 100%};
+                            $w: 84px;
+                            $h: 50px;
+                            @include getImgBoxSize($w, $h, $boxWidth_pc);
+                            @include mob-width {
+                                left: #{math.div(413px, $boxWidth_mb) * 100%};
+                                top: #{math.div(680px, $boxHeight_mb) * 100%};
+                                $w: 91px;
+                                $h: 84px;
+                                @include getImgBoxSize($w, $h, $boxWidth_mb);
+                            }
+                        }
+                        &-obj {
+                            position: absolute;
+                            left: 0;
+                            top: 0;
+                            right: 0;
+                            bottom: 0;
+                            background-size: 100%;
+                            background-repeat: no-repeat;
+                            background-position: center;
+                            @if $i == 1 {
+                                background-image: url(#{$imgCdnPath + 'pc/bannerIcon2.png'});
+                                @include mob-width {
+                                    background-image: url(#{$imgCdnPath + 'pc/bannerIcon2.png'});
+                                }
+                            } @else if $i == 2 {
+                                background-image: url(#{$imgCdnPath + 'pc/bannerIcon3.png'});
+                                @include mob-width {
+                                    background-image: url(#{$imgCdnPath + 'pc/bannerIcon3.png'});
+                                }
+                            } @else if $i == 3 {
+                                background-image: url(#{$imgCdnPath + 'pc/bannerIcon1.png'});
+                                @include mob-width {
+                                    background-image: url(#{$imgCdnPath + 'pc/bannerIcon1.png'});
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .bgGrass {
+            @for $i from 1 through 2 {
+                .bgGrass__#{$i} {
+                    &-anime {
+                        transform-origin: bottom;
+                        position: absolute;
+                        display: block;
+                        @if $i == 1 {
+                            left: #{math.div(1704px, $boxWidth_pc) * 100%};
+                            top: #{math.div(589px, $boxHeight_pc) * 100%};
+                            $w: 160px;
+                            $h: 152px;
+                            @include getImgBoxSize($w, $h, $boxWidth_pc);
+                            @include mob-width {
+                                left: #{math.div(596px, $boxWidth_mb) * 100%};
+                                top: #{math.div(1005px, $boxHeight_mb) * 100%};
+                                $w: 58px;
+                                $h: 65px;
+                                @include getImgBoxSize($w, $h, $boxWidth_mb);
+                            }
+                        } @else if $i == 2 {
+                            left: #{math.div(1578px, $boxWidth_pc) * 100%};
+                            top: #{math.div(692px, $boxHeight_pc) * 100%};
+                            $w: 101px;
+                            $h: 98px;
+                            @include getImgBoxSize($w, $h, $boxWidth_pc);
+                            @include mob-width {
+                                display: none;
+                            }
+                        }
+                        &-obj {
+                            position: absolute;
+                            left: 0;
+                            top: 0;
+                            right: 0;
+                            bottom: 0;
+                            background-size: 100%;
+                            background-repeat: no-repeat;
+                            background-position: center;
+                            @if $i == 1 {
+                                background-image: url(#{$imgCdnPath + 'pc/grass.png'});
+                            } @else if $i == 2 {
+                                background-image: url(#{$imgCdnPath + 'pc/grass.png'});
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .bgTurf {
+            @for $i from 1 through 4 {
+                .bgTurf__#{$i} {
+                    &-anime {
+                        transform-origin: bottom;
+                        position: absolute;
+                        display: block;
+                        @if $i == 4 {
+                            left: #{math.div(-100px, $boxWidth_pc) * 100%};
+                            top: #{math.div(720px, $boxHeight_pc) * 100%};
+                            $w: 340px;
+                            $h: 118px;
+                            @include getImgBoxSize($w, $h, $boxWidth_pc);
+                            @include mob-width {
+                                left: #{math.div(-209px, $boxWidth_mb) * 100%};
+                                top: #{math.div(956px, $boxHeight_mb) * 100%};
+                                $w: 358px;
+                                $h: 96px;
+                                @include getImgBoxSize($w, $h, $boxWidth_mb);
+                            }
+                        } @else if $i == 3 {
+                            left: #{math.div(968px, $boxWidth_pc) * 100%};
+                            top: #{math.div(738px, $boxHeight_pc) * 100%};
+                            $w: 269px;
+                            $h: 59px;
+                            @include getImgBoxSize($w, $h, $boxWidth_pc);
+                            @include mob-width {
+                                left: #{math.div(421px, $boxWidth_mb) * 100%};
+                                top: #{math.div(1033px, $boxHeight_mb) * 100%};
+                                $w: 184px;
+                                $h: 40px;
+                                @include getImgBoxSize($w, $h, $boxWidth_mb);
+                            }
+                        } @else if $i == 1 {
+                            left: #{math.div(149px, $boxWidth_pc) * 100%};
+                            top: #{math.div(621px, $boxHeight_pc) * 100%};
+                            $w: 68px;
+                            $h: 123px;
+                            @include getImgBoxSize($w, $h, $boxWidth_pc);
+                            @include mob-width {
+                                display: none;
+                            }
+                        } @else if $i == 2 {
+                            left: #{math.div(32px, $boxWidth_pc) * 100%};
+                            top: #{math.div(550px, $boxHeight_pc) * 100%};
+                            $w: 117px;
+                            $h: 210px;
+                            @include getImgBoxSize($w, $h, $boxWidth_pc);
+                            @include mob-width {
+                                left: #{math.div(-16px, $boxWidth_mb) * 100%};
+                                top: #{math.div(819px, $boxHeight_mb) * 100%};
+                                $w: 85px;
+                                $h: 166px;
+                                @include getImgBoxSize($w, $h, $boxWidth_mb);
+                            }
+                        }
+                        &-obj {
+                            position: absolute;
+                            left: 0;
+                            top: 0;
+                            right: 0;
+                            bottom: 0;
+                            background-size: 100%;
+                            background-repeat: no-repeat;
+                            background-position: center;
+                            @if $i == 1 {
+                                background-image: url(#{$imgCdnPath + 'pc/turf3.png'});
+                            } @else if $i == 2 {
+                                background-image: url(#{$imgCdnPath + 'pc/turf4.png'});
+                            } @else if $i == 3 {
+                                background-image: url(#{$imgCdnPath + 'pc/turf2.png'});
+                            } @else if $i == 4 {
+                                background-image: url(#{$imgCdnPath + 'pc/turf.png'});
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .bgtxt {
+            @for $i from 1 through 11 {
+                .bgtxt__#{$i} {
+                    &-anime {
+                        position: absolute;
+                        display: block;
+                        @if $i == 1 {
+                            left: #{math.div(1438px, $boxWidth_pc) * 100%};
+                            top: #{math.div(119px, $boxHeight_pc) * 100%};
+                            $w: 127px;
+                            $h: 48px;
+                            @include getImgBoxSize($w, $h, $boxWidth_pc);
+                            @include mob-width {
+                                left: #{math.div(389px, $boxWidth_mb) * 100%};
+                                top: #{math.div(126px, $boxHeight_mb) * 100%};
+                                $w: 133px;
+                                $h: 50px;
+                                @include getImgBoxSize($w, $h, $boxWidth_mb);
+                            }
+                        } @else if $i == 2 {
+                            left: #{math.div(1200px, $boxWidth_pc) * 100%};
+                            top: #{math.div(187px, $boxHeight_pc) * 100%};
+                            $w: 108px;
+                            $h: 104px;
+                            @include getImgBoxSize($w, $h, $boxWidth_pc);
+                            @include mob-width {
+                                left: #{math.div(111px, $boxWidth_mb) * 100%};
+                                top: #{math.div(186px, $boxHeight_mb) * 100%};
+                                $w: 113px;
+                                $h: 109px;
+                                @include getImgBoxSize($w, $h, $boxWidth_mb);
+                            }
+                        } @else if $i == 3 {
+                            left: #{math.div(1299px, $boxWidth_pc) * 100%};
+                            top: #{math.div(142px, $boxHeight_pc) * 100%};
+                            $w: 88px;
+                            $h: 158px;
+                            @include getImgBoxSize($w, $h, $boxWidth_pc);
+                            @include mob-width {
+                                left: #{math.div(214px, $boxWidth_mb) * 100%};
+                                top: #{math.div(140px, $boxHeight_mb) * 100%};
+                                $w: 93px;
+                                $h: 165px;
+                                @include getImgBoxSize($w, $h, $boxWidth_mb);
+                            }
+                        } @else if $i == 4 {
+                            left: #{math.div(1385px, $boxWidth_pc) * 100%};
+                            top: #{math.div(160px, $boxHeight_pc) * 100%};
+                            $w: 94px;
+                            $h: 153px;
+                            @include getImgBoxSize($w, $h, $boxWidth_pc);
+                            @include mob-width {
+                                left: #{math.div(304px, $boxWidth_mb) * 100%};
+                                top: #{math.div(159px, $boxHeight_mb) * 100%};
+                                $w: 99px;
+                                $h: 160px;
+                                @include getImgBoxSize($w, $h, $boxWidth_mb);
+                            }
+                        } @else if $i == 5 {
+                            left: #{math.div(1490px, $boxWidth_pc) * 100%};
+                            top: #{math.div(186px, $boxHeight_pc) * 100%};
+                            $w: 58px;
+                            $h: 105px;
+                            @include getImgBoxSize($w, $h, $boxWidth_pc);
+                            @include mob-width {
+                                left: #{math.div(414px, $boxWidth_mb) * 100%};
+                                top: #{math.div(186px, $boxHeight_mb) * 100%};
+                                $w: 61px;
+                                $h: 110px;
+                                @include getImgBoxSize($w, $h, $boxWidth_mb);
+                            }
+                        } @else if $i == 6 {
+                            left: #{math.div(1546px, $boxWidth_pc) * 100%};
+                            top: #{math.div(205px, $boxHeight_pc) * 100%};
+                            $w: 50px;
+                            $h: 104px;
+                            @include getImgBoxSize($w, $h, $boxWidth_pc);
+                            @include mob-width {
+                                left: #{math.div(473px, $boxWidth_mb) * 100%};
+                                top: #{math.div(205px, $boxHeight_mb) * 100%};
+                                $w: 52px;
+                                $h: 109px;
+                                @include getImgBoxSize($w, $h, $boxWidth_mb);
+                            }
+                        } @else if $i == 7 {
+                            left: #{math.div(1122px, $boxWidth_pc) * 100%};
+                            top: #{math.div(302px, $boxHeight_pc) * 100%};
+                            $w: 98px;
+                            $h: 144px;
+                            @include getImgBoxSize($w, $h, $boxWidth_pc);
+                            @include mob-width {
+                                left: #{math.div(29px, $boxWidth_mb) * 100%};
+                                top: #{math.div(307px, $boxHeight_mb) * 100%};
+                                $w: 103px;
+                                $h: 151px;
+                                @include getImgBoxSize($w, $h, $boxWidth_mb);
+                            }
+                        } @else if $i == 8 {
+                            left: #{math.div(1221px, $boxWidth_pc) * 100%};
+                            top: #{math.div(305px, $boxHeight_pc) * 100%};
+                            $w: 135px;
+                            $h: 201px;
+                            @include getImgBoxSize($w, $h, $boxWidth_pc);
+                            @include mob-width {
+                                left: #{math.div(133px, $boxWidth_mb) * 100%};
+                                top: #{math.div(311px, $boxHeight_mb) * 100%};
+                                $w: 141px;
+                                $h: 210px;
+                                @include getImgBoxSize($w, $h, $boxWidth_mb);
+                            }
+                        } @else if $i == 9 {
+                            left: #{math.div(1357px, $boxWidth_pc) * 100%};
+                            top: #{math.div(351px, $boxHeight_pc) * 100%};
+                            $w: 116px;
+                            $h: 115px;
+                            @include getImgBoxSize($w, $h, $boxWidth_pc);
+                            @include mob-width {
+                                left: #{math.div(276px, $boxWidth_mb) * 100%};
+                                top: #{math.div(358px, $boxHeight_mb) * 100%};
+                                $w: 121px;
+                                $h: 121px;
+                                @include getImgBoxSize($w, $h, $boxWidth_mb);
+                            }
+                        } @else if $i == 10 {
+                            left: #{math.div(1468px, $boxWidth_pc) * 100%};
+                            top: #{math.div(323px, $boxHeight_pc) * 100%};
+                            $w: 110px;
+                            $h: 124px;
+                            @include getImgBoxSize($w, $h, $boxWidth_pc);
+                            @include mob-width {
+                                left: #{math.div(391px, $boxWidth_mb) * 100%};
+                                top: #{math.div(329px, $boxHeight_mb) * 100%};
+                                $w: 115px;
+                                $h: 130px;
+                                @include getImgBoxSize($w, $h, $boxWidth_mb);
+                            }
+                        } @else if $i == 11 {
+                            left: #{math.div(1577px, $boxWidth_pc) * 100%};
+                            top: #{math.div(323px, $boxHeight_pc) * 100%};
+                            $w: 93px;
+                            $h: 176px;
+                            @include getImgBoxSize($w, $h, $boxWidth_pc);
+                            @include mob-width {
+                                left: #{math.div(505px, $boxWidth_mb) * 100%};
+                                top: #{math.div(329px, $boxHeight_mb) * 100%};
+                                $w: 97px;
+                                $h: 185px;
+                                @include getImgBoxSize($w, $h, $boxWidth_mb);
+                            }
+                        }
+                        &-obj {
+                            position: absolute;
+                            left: 0;
+                            top: 0;
+                            right: 0;
+                            bottom: 0;
+                            background-size: 100%;
+                            background-repeat: no-repeat;
+                            background-position: center;
+                            @if $i == 1 {
+                                background-image: url(#{$imgCdnPath + 'pc/title11.png'});
+                            } @else if $i == 2 {
+                                background-image: url(#{$imgCdnPath + 'pc/title1.png'});
+                            } @else if $i == 3 {
+                                background-image: url(#{$imgCdnPath + 'pc/title2.png'});
+                            } @else if $i == 4 {
+                                background-image: url(#{$imgCdnPath + 'pc/title3.png'});
+                            } @else if $i == 5 {
+                                background-image: url(#{$imgCdnPath + 'pc/title4.png'});
+                            } @else if $i == 6 {
+                                background-image: url(#{$imgCdnPath + 'pc/title5.png'});
+                            } @else if $i == 7 {
+                                background-image: url(#{$imgCdnPath + 'pc/title6.png'});
+                            } @else if $i == 8 {
+                                background-image: url(#{$imgCdnPath + 'pc/title7.png'});
+                            } @else if $i == 9 {
+                                background-image: url(#{$imgCdnPath + 'pc/title8.png'});
+                            } @else if $i == 10 {
+                                background-image: url(#{$imgCdnPath + 'pc/title9.png'});
+                            } @else if $i == 11 {
+                                background-image: url(#{$imgCdnPath + 'pc/title10.png'});
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .bgDes {
+            &-anime {
+                transform-origin: top;
+                position: absolute;
+                left: #{math.div(1198px, $boxWidth_pc) * 100%};
+                top: #{math.div(508px, $boxHeight_pc) * 100%};
+                $w: 425px;
+                $h: 176px;
+                @include getImgBoxSize($w, $h, $boxWidth_pc);
+                display: block;
+                @include mob-width {
+                    left: #{math.div(129px, $boxWidth_mb) * 100%};
+                    top: #{math.div(502px, $boxHeight_mb) * 100%};
+                    $w: 406px;
+                    $h: 164px;
+                    @include getImgBoxSize($w, $h, $boxWidth_mb);
+                }
+                &-obj {
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    background: url(#{$imgCdnPath + 'pc/bannerDes.png'}) no-repeat center;
+                    background-size: 100%;
+                    .bgDesTxt1 {
+                        &-anime {
+                            position: absolute;
+                            left: #{math.div(55px, 425px) * 100%};
+                            top: #{math.div(60px, 176px) * 100%};
+                            $w: 310px;
+                            $h: 44px;
+                            @include getImgBoxSize($w, $h, 425px);
+                            display: block;
+                            @include mob-width {
+                                left: #{math.div(48px, 406px) * 100%};
+                                top: #{math.div(54px, 164px) * 100%};
+                                $w: 310px;
+                                $h: 46px;
+                                @include getImgBoxSize($w, $h, 406px);
+                            }
+                            &-obj {
+                                position: absolute;
+                                left: 0;
+                                top: 0;
+                                right: 0;
+                                bottom: 0;
+                                background: url(#{$imgCdnPath + 'pc/bannerDes1.png'}) no-repeat center;
+                                background-size: 100%;
+                            }
+                        }
+                    }
+                    .bgDesTxt2 {
+                        &-anime {
+                            position: absolute;
+                            left: #{math.div(118px, 425px) * 100%};
+                            top: #{math.div(112px, 176px) * 100%};
+                            $w: 189px;
+                            $h: 20px;
+                            @include getImgBoxSize($w, $h, 425px);
+                            display: block;
+                            @include mob-width {
+                                left: #{math.div(105px, 406px) * 100%};
+                                top: #{math.div(103px, 164px) * 100%};
+                                $w: 196px;
+                                $h: 22px;
+                                @include getImgBoxSize($w, $h, 406px);
+                            }
+                            &-obj {
+                                position: absolute;
+                                left: 0;
+                                top: 0;
+                                right: 0;
+                                bottom: 0;
+                                background: url(#{$imgCdnPath + 'pc/bannerDes2.png'}) no-repeat center;
+                                background-size: 100%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &.join {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+        $joinWidth_pc: 1920px;
+        $joinHeight_pc: 1823px;
+        $joinWidth_mb: $mobm-media;
+        $joinHeight_mb: 2458px;
+        width: 100%;
+        z-index: 9;
+        background-color: #ffe6b3;
+        > .height {
+            display: block;
+            padding-bottom: #{math.div($joinHeight_pc, $joinWidth_pc) * 100%};
+            @include mob-width {
+                padding-bottom: #{math.div($joinHeight_mb, $joinWidth_mb) * 100%};
+            }
+        }
+        .joinIcon {
+            @for $i from 1 through 7 {
+                .joinIcon__#{$i} {
+                    &-anime {
+                        position: absolute;
+                        display: block;
+                        @if $i == 1 {
+                            left: #{math.div(135px, $joinWidth_pc) * 100%};
+                            top: #{math.div(166px, $joinHeight_pc) * 100%};
+                            $w: 182px;
+                            $h: 128px;
+                            z-index: 2;
+                            @include getImgBoxSize($w, $h, $joinWidth_pc);
+                            @include mob-width {
+                                left: #{math.div(52px, $joinWidth_mb) * 100%};
+                                top: #{math.div(46px, $joinHeight_mb) * 100%};
+                                $w: 139px;
+                                $h: 97px;
+                                @include getImgBoxSize($w, $h, $joinWidth_mb);
+                            }
+                        } @else if $i == 2 {
+                            left: #{math.div(1385px, $joinWidth_pc) * 100%};
+                            top: #{math.div(174px, $joinHeight_pc) * 100%};
+                            $w: 224px;
+                            $h: 173px;
+                            @include getImgBoxSize($w, $h, $joinWidth_pc);
+                            @include mob-width {
+                                left: #{math.div(282px, $joinWidth_mb) * 100%};
+                                top: #{math.div(865px, $joinHeight_mb) * 100%};
+                                $w: 171px;
+                                $h: 133px;
+                                @include getImgBoxSize($w, $h, $joinWidth_mb);
+                            }
+                        } @else if $i == 3 {
+                            left: #{math.div(1606px, $joinWidth_pc) * 100%};
+                            top: #{math.div(135px, $joinHeight_pc) * 100%};
+                            $w: 112px;
+                            $h: 109px;
+                            @include getImgBoxSize($w, $h, $joinWidth_pc);
+                            @include mob-width {
+                                left: #{math.div(481px, $joinWidth_mb) * 100%};
+                                top: #{math.div(871px, $joinHeight_mb) * 100%};
+                                $w: 66px;
+                                $h: 64px;
+                                @include getImgBoxSize($w, $h, $joinWidth_mb);
+                            }
+                        } @else if $i == 4 {
+                            left: #{math.div(1733px, $joinWidth_pc) * 100%};
+                            top: #{math.div(244px, $joinHeight_pc) * 100%};
+                            $w: 62px;
+                            $h: 88px;
+                            @include getImgBoxSize($w, $h, $joinWidth_pc);
+                            @include mob-width {
+                                left: #{math.div(565px, $joinWidth_mb) * 100%};
+                                top: #{math.div(859px, $joinHeight_mb) * 100%};
+                                $w: 36px;
+                                $h: 51px;
+                                @include getImgBoxSize($w, $h, $joinWidth_mb);
+                            }
+                        } @else if $i == 5 {
+                            left: #{math.div(-55px, $joinWidth_pc) * 100%};
+                            top: #{math.div(828px, $joinHeight_pc) * 100%};
+                            $w: 260px;
+                            $h: 244px;
+                            @include getImgBoxSize($w, $h, $joinWidth_pc);
+                            @include mob-width {
+                                left: #{math.div(-50px, $joinWidth_mb) * 100%};
+                                top: #{math.div(1386px, $joinHeight_mb) * 100%};
+                                $w: 140px;
+                                $h: 145px;
+                                @include getImgBoxSize($w, $h, $joinWidth_mb);
+                            }
+                        } @else if $i == 6 {
+                            left: #{math.div(1582px, $joinWidth_pc) * 100%};
+                            top: #{math.div(1081px, $joinHeight_pc) * 100%};
+                            $w: 215px;
+                            $h: 209px;
+                            @include getImgBoxSize($w, $h, $joinWidth_pc);
+                            @include mob-width {
+                                left: #{math.div(454px, $joinWidth_mb) * 100%};
+                                top: #{math.div(1519px, $joinHeight_mb) * 100%};
+                                $w: 131px;
+                                $h: 127px;
+                                @include getImgBoxSize($w, $h, $joinWidth_mb);
+                            }
+                        } @else if $i == 7 {
+                            left: #{math.div(43px, $joinWidth_pc) * 100%};
+                            top: #{math.div(1555px, $joinHeight_pc) * 100%};
+                            $w: 247px;
+                            $h: 184px;
+                            @include getImgBoxSize($w, $h, $joinWidth_pc);
+                            @include mob-width {
+                                display: none;
+                            }
+                        }
+                        &-obj {
+                            position: absolute;
+                            left: 0;
+                            top: 0;
+                            right: 0;
+                            bottom: 0;
+                            background-size: 100%;
+                            background-repeat: no-repeat;
+                            background-position: center;
+                            @if $i == 1 {
+                                background-image: url(#{$imgCdnPath + 'pc/love-all.png'});
+                            } @else if $i == 2 {
+                                background-image: url(#{$imgCdnPath + 'pc/joinIcon1.png'});
+                            } @else if $i == 3 {
+                                background-image: url(#{$imgCdnPath + 'pc/joinIcon2.png'});
+                            } @else if $i == 4 {
+                                background-image: url(#{$imgCdnPath + 'pc/joinIcon3.png'});
+                            } @else if $i == 5 {
+                                background-image: url(#{$imgCdnPath + 'pc/pen.png'});
+                            } @else if $i == 6 {
+                                background-image: url(#{$imgCdnPath + 'pc/rainbow.png'});
+                            } @else if $i == 7 {
+                                background-image: url(#{$imgCdnPath + 'pc/ball.png'});
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .joinDes1 {
+            &-anime {
+                position: absolute;
+                left: #{math.div(195px, $joinWidth_pc) * 100%};
+                top: #{math.div(96px, $joinHeight_pc) * 100%};
+                $w: 798px;
+                $h: 699px;
+                @include getImgBoxSize($w, $h, $joinWidth_pc);
+                display: block;
+                @include mob-width {
+                    left: #{math.div(-100px, $joinWidth_mb) * 100%};
+                    top: #{math.div(25px, $joinHeight_mb) * 100%};
+                    $w: 840px;
+                    $h: 829px;
+                    @include getImgBoxSize($w, $h, $joinWidth_mb);
+                }
+                &-obj {
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    background: url(#{$imgCdnPath + 'pc/joinDes.png'}) no-repeat center;
+                    background-size: 100%;
+                    @include mob-width {
+                        background: url(#{$imgCdnPath + 'mb/t.png'}) no-repeat center;
+                        background-size: 100%;
+                    }
+                }
+            }
+        }
+        .movie {
+            &-anime {
+                position: absolute;
+                left: #{math.div(922px, $joinWidth_pc) * 100%};
+                top: #{math.div(214px, $joinHeight_pc) * 100%};
+                $w: 780px;
+                $h: 535px;
+                @include getImgBoxSize($w, $h, $joinWidth_pc);
+                display: block;
+                @include mob-width {
+                    left: #{math.div(-101px, $joinWidth_mb) * 100%};
+                    top: #{math.div(897px, $joinHeight_mb) * 100%};
+                    $w: 842px;
+                    $h: 436px;
+                    @include getImgBoxSize($w, $h, $joinWidth_mb);
+                }
+                &-obj {
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    background: url(#{$imgCdnPath + 'pc/movie.png'}) no-repeat center;
+                    background-size: 100%;
+                    @include mob-width {
+                        background: url(#{$imgCdnPath + 'mb/movie.png'}) no-repeat center;
+                        background-size: 100%;
+                    }
+                    .video {
+                        // width: 90%;
+                        // height: 75%;
+                        position: relative;
+                        $w: 740px;
+                        $h: 416.25px;
+                        @include getImgBoxSize($w, $h, 780px);
+                        margin: auto;
+                        margin-top: 12%;
+                        @include mob-width {
+                            $w: 620px;
+                            $h: 348.75px;
+                            @include getImgBoxSize($w, $h, 842px);
+                            margin-top: 8.2%;
+                        }
+                        video {
+                            position: absolute;
+                            width: 100%;
+                            height: 100%;
+                        }
+                        .playVideo__box {
+                            position: absolute;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            left: 0;
+                            top: 0;
+                            width: 100%;
+                            height: 100%;
+                            cursor: pointer;
+                            &:after {
+                                content: '';
+                                position: absolute;
+                                z-index: 0;
+                                left: 0;
+                                top: 0;
+                                width: 100%;
+                                height: 100%;
+                                background-color: #000000;
+                                transition: all 0.3s ease-in-out;
+                                opacity: 0.7;
+                            }
+                            &:hover {
+                                &:after {
+                                    opacity: 0.5;
+                                }
+                            }
+                        }
+                        .btn-playVideo {
+                            position: relative;
+                            z-index: 2;
+                            display: block;
+                            width: 60px;
+                            height: 60px;
+                            background: url(#{$imgCdnPath + 'pc/play-circle-solid.svg'}) no-repeat center;
+                            background-size: contain;
+                            transition: all 0.25s ease;
+                        }
+                        .btn-pauseVideo {
+                            position: absolute;
+                            top: 25px;
+                            right: 25px;
+                            z-index: 9;
+                            width: 30px;
+                            height: 30px;
+                            background: url(#{$imgCdnPath + 'pc/pause-circle-solid.svg'}) no-repeat center;
+                            background-size: contain;
+                            cursor: pointer;
+                            transition: all 0.25s ease;
+                            &:hover {
+                                opacity: 0.7;
+                            }
+
+                            @include mob-width {
+                                top: 10px;
+                                right: 15px;
+                                z-index: 9;
+                                width: 25px;
+                                height: 25px;
+                            }
+                        }
+                    }
+                    .movieDes {
+                        font-size: 19px;
+                        font-family: $fontfamily;
+                        line-height: 1.34;
+                        letter-spacing: 1.9px;
+                        color: #614131;
+                        top: #{math.div(540px, 535px) * 100%};
+                        right: 0;
+                        position: absolute;
+                        @include mob-width {
+                            width: 72%;
+                            margin: auto;
+                            position: relative;
+                            top: #{math.div(28px, 436px) * 100%};
+                            font-size: 14.5px;
+                            line-height: 1.55;
+                            letter-spacing: 0.99px;
+                            text-align: center;
+                        }
+                        .mb_br {
+                            display: none;
+                            @include mob-width {
+                                display: block;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .zhen {
+            &-anime {
+                position: absolute;
+                left: #{math.div(207px, $joinWidth_pc) * 100%};
+                top: #{math.div(985px, $joinHeight_pc) * 100%};
+                $w: 511px;
+                $h: 632px;
+                @include getImgBoxSize($w, $h, $joinWidth_pc);
+                display: block;
+                @include mob-width {
+                    left: #{math.div(10px, $joinWidth_mb) * 100%};
+                    top: #{math.div(1440px, $joinHeight_mb) * 100%};
+                    $w: 500px;
+                    $h: 442.8px;
+                    @include getImgBoxSize($w, $h, $joinWidth_mb);
+                }
+                &-obj {
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    background: url(#{$imgCdnPath + 'pc/zhen.png'}) no-repeat center;
+                    background-size: 100%;
+                    @include mob-width {
+                        background: url(#{$imgCdnPath + 'mb/zhen.png'}) no-repeat center;
+                        background-size: 100%;
+                    }
+                }
+            }
+        }
+        .joinDes2 {
+            &-anime {
+                position: absolute;
+                left: #{math.div(664px, $joinWidth_pc) * 100%};
+                top: #{math.div(918px, $joinHeight_pc) * 100%};
+                $w: 901px;
+                $h: 672px;
+                @include getImgBoxSize($w, $h, $joinWidth_pc);
+                display: block;
+                @include mob-width {
+                    left: #{math.div(10px, $joinWidth_mb) * 100%};
+                    top: #{math.div(1748px, $joinHeight_mb) * 100%};
+                    $w: 621px;
+                    $h: 557px;
+                    @include getImgBoxSize($w, $h, $joinWidth_mb);
+                }
+                &-obj {
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    background: url(#{$imgCdnPath + 'pc/joinDes2.png'}) no-repeat center;
+                    background-size: 100%;
+                    @include mob-width {
+                        background: url(#{$imgCdnPath + 'mb/t_2.png'}) no-repeat center;
+                        background-size: 100%;
+                    }
+                }
+            }
+        }
+        .pic {
+            &-anime {
+                position: absolute;
+                left: #{math.div(1389px, $joinWidth_pc) * 100%};
+                top: #{math.div(1365px, $joinHeight_pc) * 100%};
+                $w: 527px;
+                $h: 441px;
+                @include getImgBoxSize($w, $h, $joinWidth_pc);
+                display: block;
+                @include mob-width {
+                    left: #{math.div(394px, $joinWidth_mb) * 100%};
+                    top: #{math.div(2050px, $joinHeight_mb) * 100%};
+                    $w: 330px;
+                    $h: 281px;
+                    @include getImgBoxSize($w, $h, $joinWidth_mb);
+                }
+                &-obj {
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    background: url(#{$imgCdnPath + 'pc/pic.png'}) no-repeat center;
+                    background-size: 100%;
+                    @include mob-width {
+                        background: url(#{$imgCdnPath + 'mb/pic_2.png'}) no-repeat center;
+                        background-size: 100%;
+                    }
+                }
+            }
+        }
+        .joinBtn {
+            &-anime {
+                cursor: pointer;
+                position: absolute;
+                left: #{math.div(768px, $joinWidth_pc) * 100%};
+                top: #{math.div(1679px, $joinHeight_pc) * 100%};
+                $w: 382px;
+                $h: 79px;
+                @include getImgBoxSize($w, $h, $joinWidth_pc);
+                display: block;
+                transition: ease 0.2s;
+                &:hover {
+                    transform: scale(1.05);
+                }
+                @include mob-width {
+                    display: none;
+                }
+                &-obj {
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    animation: btnSwitch 1.8s ease-in-out infinite;
+                    background: url(#{$imgCdnPath + 'pc/button.png'}) no-repeat center;
+                    background-size: 100%;
+                    border-radius: 17px;
+                }
+            }
+        }
+        @keyframes btnSwitch {
+            0% {
+                background-image: url(#{$imgCdnPath + 'pc/button.png'});
+            }
+            25% {
+                background-image: url(#{$imgCdnPath + 'pc/button2.png'});
+            }
+            50% {
+                background-image: url(#{$imgCdnPath + 'pc/button.png'});
+            }
+            75% {
+                background-image: url(#{$imgCdnPath + 'pc/button2.png'});
+            }
+            100% {
+                background-image: url(#{$imgCdnPath + 'pc/button.png'});
+            }
+        }
+        @keyframes btnSwitch_mb {
+            0% {
+                background-image: url(#{$imgCdnPath + 'mb/butten-0802-1.png'});
+            }
+            25% {
+                background-image: url(#{$imgCdnPath + 'mb/butten-0802-2.png'});
+            }
+            50% {
+                background-image: url(#{$imgCdnPath + 'mb/butten-0802-1.png'});
+            }
+            75% {
+                background-image: url(#{$imgCdnPath + 'mb/butten-0802-2.png'});
+            }
+            100% {
+                background-image: url(#{$imgCdnPath + 'mb/butten-0802-1.png'});
+            }
+        }
+    }
+    &.bg2Layout {
+        position: relative;
+        //overflow: hidden;
+        $bg2Width_pc: 1920px;
+        $bg2Height_pc: 305px;
+        $bg2Width_mb: $mobm-media;
+        $bg2Height_mb: 50px;
+        width: 100%;
+        z-index: 9;
+        //pointer-events: none;
+        background: url(#{$imgCdnPath + 'pc/bg2.jpg'}) no-repeat center;
+        background-size: 100%;
+        @include mob-width {
+            background: url(#{$imgCdnPath + 'mb/220815-love-layout-MB_03.jpg'}) no-repeat center;
+        }
+        > .height {
+            display: block;
+            padding-bottom: #{math.div($bg2Height_pc, $bg2Width_pc) * 100%};
+            @include mob-width {
+                padding-bottom: #{math.div($bg2Height_mb, $bg2Width_mb) * 100%};
+            }
+        }
+        .bg2Icon {
+            &-anime {
+                position: absolute;
+                left: #{math.div(465px, $bg2Width_pc) * 100%};
+                top: #{math.div(125px, $bg2Height_pc) * 100%};
+                $w: 81px;
+                $h: 79px;
+                @include getImgBoxSize($w, $h, $bg2Width_pc);
+                display: block;
+                @include mob-width {
+                    left: #{math.div(-15px, $bg2Width_mb) * 100%};
+                    top: #{math.div(-90px, $bg2Height_mb) * 100%};
+                    $w: 160px;
+                    $h: 119px;
+                    @include getImgBoxSize($w, $h, $bg2Width_mb);
+                }
+                &-obj {
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    background: url(#{$imgCdnPath + 'pc/bannerIcon2.png'}) no-repeat center;
+                    background-size: 100%;
+                    @include mob-width {
+                        background: url(#{$imgCdnPath + 'pc/ball.png'}) no-repeat center;
+                        background-size: 100%;
+                    }
+                }
+            }
+        }
+        .bg2Btn {
+            &-anime {
+                display: none;
+                @include mob-width {
+                    position: absolute;
+                    display: block;
+                    left: #{math.div(122px, $bg2Width_mb) * 100%};
+                    top: #{math.div(-126px, $bg2Height_mb) * 100%};
+                    $w: 396px;
+                    $h: 74px;
+                    @include getImgBoxSize($w, $h, $bg2Width_mb);
+                }
+                &-obj {
+                    @include mob-width {
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        right: 0;
+                        bottom: 0;
+                        animation: btnSwitch_mb 1.8s ease-in-out infinite;
+                        background: url(#{$imgCdnPath + 'mb/butten-0802-1.png'}) no-repeat center;
+                        background-size: 100%;
+                    }
+                }
+            }
+        }
+    }
+    &.activity {
+        position: relative;
+        overflow: hidden;
+        $activityWidth_pc: 1920px;
+        $activityHeight_pc: 1128px;
+        $activityWidth_mb: $mobm-media;
+        $activityHeight_mb: 1508px;
+        width: 100%;
+        z-index: 9;
+        background-color: #faf0d6;
+        > .height {
+            display: block;
+            padding-bottom: #{math.div($activityHeight_pc, $activityWidth_pc) * 100%};
+            @include mob-width {
+                padding-bottom: #{math.div($activityHeight_mb, $activityWidth_mb) * 100%};
+            }
+        }
+        .activityDes {
+            &-anime {
+                position: absolute;
+                left: #{math.div(319px, $activityWidth_pc) * 100%};
+                top: #{math.div(0px, $activityHeight_pc) * 100%};
+                $w: 782px;
+                $h: 409px;
+                @include getImgBoxSize($w, $h, $activityWidth_pc);
+                display: block;
+                @include mob-width {
+                    left: #{math.div(10px, $activityWidth_mb) * 100%};
+                    top: #{math.div(46px, $activityHeight_mb) * 100%};
+                    $w: 622px;
+                    $h: 460px;
+                    @include getImgBoxSize($w, $h, $activityWidth_mb);
+                }
+                &-obj {
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    background: url(#{$imgCdnPath + 'pc/activityDes.png'}) no-repeat center;
+                    background-size: 100%;
+                    @include mob-width {
+                        background: url(#{$imgCdnPath + 'mb/t_3.png'}) no-repeat center;
+                        background-size: 100%;
+                    }
+                }
+            }
+        }
+        .music {
+            &-anime {
+                position: absolute;
+                left: #{math.div(302px, $activityWidth_pc) * 100%};
+                top: #{math.div(8px, $activityHeight_pc) * 100%};
+                $w: 165px;
+                $h: 196px;
+                @include getImgBoxSize($w, $h, $activityWidth_pc);
+                display: block;
+                @include mob-width {
+                    left: #{math.div(44px, $activityWidth_mb) * 100%};
+                    top: #{math.div(94px, $activityHeight_mb) * 100%};
+                    $w: 140px;
+                    $h: 168px;
+                    @include getImgBoxSize($w, $h, $activityWidth_mb);
+                }
+                &-obj {
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    background: url(#{$imgCdnPath + 'pc/music.png'}) no-repeat center;
+                    background-size: 100%;
+                    @include mob-width {
+                        background: url(#{$imgCdnPath + 'mb/music.png'}) no-repeat center;
+                        background-size: 100%;
+                    }
+                }
+            }
+        }
+        .click {
+            &-anime {
+                position: absolute;
+                left: #{math.div(1105px, $activityWidth_pc) * 100%};
+                top: #{math.div(110px, $activityHeight_pc) * 100%};
+                $w: 76px;
+                $h: 92px;
+                @include getImgBoxSize($w, $h, $activityWidth_pc);
+                display: block;
+                @include mob-width {
+                    left: #{math.div(513px, $activityWidth_mb) * 100%};
+                    top: #{math.div(570px, $activityHeight_mb) * 100%};
+                    $w: 69px;
+                    $h: 60px;
+                    @include getImgBoxSize($w, $h, $activityWidth_mb);
+                }
+                &-obj {
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    background: url(#{$imgCdnPath + 'pc/click.png'}) no-repeat center;
+                    background-size: 100%;
+                    @include mob-width {
+                        background: url(#{$imgCdnPath + 'mb/click.png'}) no-repeat center;
+                        background-size: 100%;
+                    }
+                }
+            }
+        }
+        .boxTop {
+            &-anime {
+                position: absolute;
+                left: #{math.div(650px, $activityWidth_pc) * 100%};
+                top: #{math.div(600px, $activityHeight_pc) * 100%};
+                $w: 606px;
+                $h: 158px;
+                @include getImgBoxSize($w, $h, $activityWidth_pc);
+                display: block;
+                @include mob-width {
+                    left: #{math.div(73px, $activityWidth_mb) * 100%};
+                    top: #{math.div(822px, $activityHeight_mb) * 100%};
+                    $w: 487px;
+                    $h: 127px;
+                    @include getImgBoxSize($w, $h, $activityWidth_mb);
+                }
+                &-obj {
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    background: url(#{$imgCdnPath + 'pc/boxTop.png'}) no-repeat center;
+                    background-size: 100%;
+                    @include mob-width {
+                        background: url(#{$imgCdnPath + 'pc/boxTop.png'}) no-repeat center;
+                        background-size: 100%;
+                    }
+                }
+            }
+        }
+        .hand2 {
+            &-anime {
+                cursor: pointer;
+                position: absolute;
+                left: #{math.div(1009px, $activityWidth_pc) * 100%};
+                top: #{math.div(117px, $activityHeight_pc) * 100%};
+                $w: 421px;
+                $h: 246px;
+                @include getImgBoxSize($w, $h, $activityWidth_pc);
+                display: block;
+                @include mob-width {
+                    left: #{math.div(371px, $activityWidth_mb) * 100%};
+                    top: #{math.div(409px, $activityHeight_mb) * 100%};
+                    $w: 360px;
+                    $h: 201px;
+                    @include getImgBoxSize($w, $h, $activityWidth_mb);
+                }
+                &-obj {
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    background: url(#{$imgCdnPath + 'pc/hand-2.png'}) no-repeat center;
+                    background-size: 100%;
+                    @include mob-width {
+                        background: url(#{$imgCdnPath + 'mb/hand-2.png'}) no-repeat center;
+                        background-size: 100%;
+                    }
+                }
+            }
+        }
+        .heart {
+            &-anime {
+                position: absolute;
+                left: #{math.div(969px, $activityWidth_pc) * 100%};
+                top: #{math.div(277px, $activityHeight_pc) * 100%};
+                $w: 101px;
+                $h: 107px;
+                @include getImgBoxSize($w, $h, $activityWidth_pc);
+                display: block;
+                @include mob-width {
+                    left: #{math.div(342px, $activityWidth_mb) * 100%};
+                    top: #{math.div(547px, $activityHeight_mb) * 100%};
+                    $w: 74px;
+                    $h: 78px;
+                    @include getImgBoxSize($w, $h, $activityWidth_mb);
+                }
+                &-obj {
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    background: url(#{$imgCdnPath + 'pc/boxGift6.png'}) no-repeat center;
+                    background-size: 100%;
+                    @include mob-width {
+                        background: url(#{$imgCdnPath + 'pc/boxGift6.png'}) no-repeat center;
+                        background-size: 100%;
+                    }
+                }
+            }
+        }
+        .hand {
+            &-anime {
+                transform-origin: right top;
+                cursor: pointer;
+                position: absolute;
+                left: #{math.div(1023px, $activityWidth_pc) * 100%};
+                top: #{math.div(259px, $activityHeight_pc) * 100%};
+                $w: 105px;
+                $h: 100px;
+                @include getImgBoxSize($w, $h, $activityWidth_pc);
+                display: block;
+                @include mob-width {
+                    left: #{math.div(381px, $activityWidth_mb) * 100%};
+                    top: #{math.div(533px, $activityHeight_mb) * 100%};
+                    $w: 78px;
+                    $h: 74px;
+                    @include getImgBoxSize($w, $h, $activityWidth_mb);
+                }
+                &-obj {
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    background: url(#{$imgCdnPath + 'pc/hand-1.png'}) no-repeat center;
+                    background-size: 100%;
+                    @include mob-width {
+                        background: url(#{$imgCdnPath + 'mb/hand-1.png'}) no-repeat center;
+                        background-size: 100%;
+                    }
+                }
+            }
+        }
+        .gift {
+            @for $i from 1 through 7 {
+                .gift__#{$i} {
+                    &-anime {
+                        position: absolute;
+                        transform-origin: bottom;
+                        opacity: 0;
+                        @if $i == 1 {
+                            left: #{math.div(636px, $activityWidth_pc) * 100%};
+                            top: #{math.div(553px, $activityHeight_pc) * 100%};
+                            $w: 90px;
+                            $h: 117px;
+                            @include getImgBoxSize($w, $h, $activityWidth_pc);
+                            @include mob-width {
+                                left: #{math.div(65px, $activityWidth_mb) * 100%};
+                                top: #{math.div(783px, $activityHeight_mb) * 100%};
+                                $w: 73px;
+                                $h: 93px;
+                                @include getImgBoxSize($w, $h, $activityWidth_mb);
+                            }
+                        } @else if $i == 2 {
+                            left: #{math.div(686px, $activityWidth_pc) * 100%};
+                            top: #{math.div(489px, $activityHeight_pc) * 100%};
+                            $w: 200px;
+                            $h: 225px;
+                            @include getImgBoxSize($w, $h, $activityWidth_pc);
+                            @include mob-width {
+                                left: #{math.div(104px, $activityWidth_mb) * 100%};
+                                top: #{math.div(733px, $activityHeight_mb) * 100%};
+                                $w: 161px;
+                                $h: 180px;
+                                @include getImgBoxSize($w, $h, $activityWidth_mb);
+                            }
+                        } @else if $i == 3 {
+                            left: #{math.div(858px, $activityWidth_pc) * 100%};
+                            top: #{math.div(551px, $activityHeight_pc) * 100%};
+                            $w: 157px;
+                            $h: 110px;
+                            @include getImgBoxSize($w, $h, $activityWidth_pc);
+                            @include mob-width {
+                                left: #{math.div(242px, $activityWidth_mb) * 100%};
+                                top: #{math.div(783px, $activityHeight_mb) * 100%};
+                                $w: 126px;
+                                $h: 88px;
+                                @include getImgBoxSize($w, $h, $activityWidth_mb);
+                            }
+                        } @else if $i == 4 {
+                            left: #{math.div(981px, $activityWidth_pc) * 100%};
+                            top: #{math.div(481px, $activityHeight_pc) * 100%};
+                            $w: 127px;
+                            $h: 151px;
+                            @include getImgBoxSize($w, $h, $activityWidth_pc);
+                            @include mob-width {
+                                left: #{math.div(342px, $activityWidth_mb) * 100%};
+                                top: #{math.div(726px, $activityHeight_mb) * 100%};
+                                $w: 101px;
+                                $h: 122px;
+                                @include getImgBoxSize($w, $h, $activityWidth_mb);
+                            }
+                        } @else if $i == 5 {
+                            left: #{math.div(1008px, $activityWidth_pc) * 100%};
+                            top: #{math.div(582px, $activityHeight_pc) * 100%};
+                            $w: 101px;
+                            $h: 101px;
+                            @include getImgBoxSize($w, $h, $activityWidth_pc);
+                            @include mob-width {
+                                left: #{math.div(364px, $activityWidth_mb) * 100%};
+                                top: #{math.div(807px, $activityHeight_mb) * 100%};
+                                $w: 82px;
+                                $h: 82px;
+                                @include getImgBoxSize($w, $h, $activityWidth_mb);
+                            }
+                        } @else if $i == 6 {
+                            left: #{math.div(1090px, $activityWidth_pc) * 100%};
+                            top: #{math.div(537px, $activityHeight_pc) * 100%};
+                            $w: 174px;
+                            $h: 143px;
+                            @include getImgBoxSize($w, $h, $activityWidth_pc);
+                            @include mob-width {
+                                left: #{math.div(429px, $activityWidth_mb) * 100%};
+                                top: #{math.div(772px, $activityHeight_mb) * 100%};
+                                $w: 140px;
+                                $h: 114px;
+                                @include getImgBoxSize($w, $h, $activityWidth_mb);
+                            }
+                        } @else if $i == 7 {
+                            left: #{math.div(1115px, $activityWidth_pc) * 100%};
+                            top: #{math.div(615px, $activityHeight_pc) * 100%};
+                            $w: 91px;
+                            $h: 229px;
+                            z-index: 9;
+                            @include getImgBoxSize($w, $h, $activityWidth_pc);
+                            @include mob-width {
+                                left: #{math.div(448px, $activityWidth_mb) * 100%};
+                                top: #{math.div(833px, $activityHeight_mb) * 100%};
+                                $w: 73px;
+                                $h: 184px;
+                                @include getImgBoxSize($w, $h, $activityWidth_mb);
+                            }
+                        }
+                        &-obj {
+                            position: absolute;
+                            left: 0;
+                            top: 0;
+                            right: 0;
+                            bottom: 0;
+                            background-size: 100%;
+                            background-repeat: no-repeat;
+                            background-position: center;
+                            @if $i == 1 {
+                                background-image: url(#{$imgCdnPath + 'pc/boxGift4.png'});
+                            } @else if $i == 2 {
+                                background-image: url(#{$imgCdnPath + 'pc/boxGift7.png'});
+                            } @else if $i == 3 {
+                                background-image: url(#{$imgCdnPath + 'pc/boxGift1.png'});
+                            } @else if $i == 4 {
+                                background-image: url(#{$imgCdnPath + 'pc/boxGift3.png'});
+                            } @else if $i == 5 {
+                                background-image: url(#{$imgCdnPath + 'pc/boxGift8.png'});
+                            } @else if $i == 6 {
+                                background-image: url(#{$imgCdnPath + 'pc/boxGift2.png'});
+                            } @else if $i == 7 {
+                                background-image: url(#{$imgCdnPath + 'pc/boxGift5.png'});
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .popHeart {
+            @for $i from 1 through 10 {
+                .popHeart__#{$i} {
+                    &-anime {
+                        position: absolute;
+                        transform-origin: center;
+                        opacity: 0;
+                        @if $i == 1 {
+                            position: absolute;
+                            left: #{math.div(850px, $activityWidth_pc) * 100%};
+                            top: #{math.div(400px, $activityHeight_pc) * 100%};
+                            $w: 101px;
+                            $h: 107px;
+                            @include getImgBoxSize($w, $h, $activityWidth_pc);
+                            display: block;
+                            @include mob-width {
+                                left: #{math.div(302px, $activityWidth_mb) * 100%};
+                                top: #{math.div(650px, $activityHeight_mb) * 100%};
+                                $w: 74px;
+                                $h: 78px;
+                                @include getImgBoxSize($w, $h, $activityWidth_mb);
+                            }
+                        } @else if $i == 2 {
+                            left: #{math.div(700px, $activityWidth_pc) * 100%};
+                            top: #{math.div(400px, $activityHeight_pc) * 100%};
+                            $w: 101px;
+                            $h: 107px;
+                            @include getImgBoxSize($w, $h, $activityWidth_pc);
+                            display: block;
+                            @include mob-width {
+                                left: #{math.div(200px, $activityWidth_mb) * 100%};
+                                top: #{math.div(600px, $activityHeight_mb) * 100%};
+                                $w: 74px;
+                                $h: 78px;
+                                @include getImgBoxSize($w, $h, $activityWidth_mb);
+                            }
+                        } @else if $i == 3 {
+                            left: #{math.div(550px, $activityWidth_pc) * 100%};
+                            top: #{math.div(430px, $activityHeight_pc) * 100%};
+                            $w: 101px;
+                            $h: 107px;
+                            @include getImgBoxSize($w, $h, $activityWidth_pc);
+                            display: block;
+                            @include mob-width {
+                                left: #{math.div(50px, $activityWidth_mb) * 100%};
+                                top: #{math.div(720px, $activityHeight_mb) * 100%};
+                                $w: 74px;
+                                $h: 78px;
+                                @include getImgBoxSize($w, $h, $activityWidth_mb);
+                            }
+                        } @else if $i == 4 {
+                            left: #{math.div(1050px, $activityWidth_pc) * 100%};
+                            top: #{math.div(450px, $activityHeight_pc) * 100%};
+                            $w: 101px;
+                            $h: 107px;
+                            @include getImgBoxSize($w, $h, $activityWidth_pc);
+                            display: block;
+                            @include mob-width {
+                                left: #{math.div(382px, $activityWidth_mb) * 100%};
+                                top: #{math.div(750px, $activityHeight_mb) * 100%};
+                                $w: 74px;
+                                $h: 78px;
+                                @include getImgBoxSize($w, $h, $activityWidth_mb);
+                            }
+                        } @else if $i == 5 {
+                            left: #{math.div(1200px, $activityWidth_pc) * 100%};
+                            top: #{math.div(420px, $activityHeight_pc) * 100%};
+                            $w: 101px;
+                            $h: 107px;
+                            @include getImgBoxSize($w, $h, $activityWidth_pc);
+                            display: block;
+                            @include mob-width {
+                                left: #{math.div(500px, $activityWidth_mb) * 100%};
+                                top: #{math.div(650px, $activityHeight_mb) * 100%};
+                                $w: 74px;
+                                $h: 78px;
+                                @include getImgBoxSize($w, $h, $activityWidth_mb);
+                            }
+                        } @else if $i == 6 {
+                            left: #{math.div(800px, $activityWidth_pc) * 100%};
+                            top: #{math.div(500px, $activityHeight_pc) * 100%};
+                            $w: 101px;
+                            $h: 107px;
+                            @include getImgBoxSize($w, $h, $activityWidth_pc);
+                            display: block;
+                            @include mob-width {
+                                left: #{math.div(262px, $activityWidth_mb) * 100%};
+                                top: #{math.div(710px, $activityHeight_mb) * 100%};
+                                $w: 74px;
+                                $h: 78px;
+                                @include getImgBoxSize($w, $h, $activityWidth_mb);
+                            }
+                        } @else if $i == 7 {
+                            left: #{math.div(650px, $activityWidth_pc) * 100%};
+                            top: #{math.div(450px, $activityHeight_pc) * 100%};
+                            $w: 101px;
+                            $h: 107px;
+                            @include getImgBoxSize($w, $h, $activityWidth_pc);
+                            display: block;
+                            @include mob-width {
+                                left: #{math.div(162px, $activityWidth_mb) * 100%};
+                                top: #{math.div(707px, $activityHeight_mb) * 100%};
+                                $w: 74px;
+                                $h: 78px;
+                                @include getImgBoxSize($w, $h, $activityWidth_mb);
+                            }
+                        } @else if $i == 8 {
+                            left: #{math.div(980px, $activityWidth_pc) * 100%};
+                            top: #{math.div(500px, $activityHeight_pc) * 100%};
+                            $w: 101px;
+                            $h: 107px;
+                            @include getImgBoxSize($w, $h, $activityWidth_pc);
+                            display: block;
+                            @include mob-width {
+                                left: #{math.div(420px, $activityWidth_mb) * 100%};
+                                top: #{math.div(680px, $activityHeight_mb) * 100%};
+                                $w: 74px;
+                                $h: 78px;
+                                @include getImgBoxSize($w, $h, $activityWidth_mb);
+                            }
+                        } @else if $i == 9 {
+                            left: #{math.div(1100px, $activityWidth_pc) * 100%};
+                            top: #{math.div(350px, $activityHeight_pc) * 100%};
+                            $w: 101px;
+                            $h: 107px;
+                            @include getImgBoxSize($w, $h, $activityWidth_pc);
+                            display: block;
+                            @include mob-width {
+                                left: #{math.div(420px, $activityWidth_mb) * 100%};
+                                top: #{math.div(600px, $activityHeight_mb) * 100%};
+                                $w: 74px;
+                                $h: 78px;
+                                @include getImgBoxSize($w, $h, $activityWidth_mb);
+                            }
+                        } @else if $i == 10 {
+                            left: #{math.div(1180px, $activityWidth_pc) * 100%};
+                            top: #{math.div(300px, $activityHeight_pc) * 100%};
+                            $w: 101px;
+                            $h: 107px;
+                            @include getImgBoxSize($w, $h, $activityWidth_pc);
+                            display: block;
+                            @include mob-width {
+                                left: #{math.div(520px, $activityWidth_mb) * 100%};
+                                top: #{math.div(730px, $activityHeight_mb) * 100%};
+                                $w: 74px;
+                                $h: 78px;
+                                @include getImgBoxSize($w, $h, $activityWidth_mb);
+                            }
+                        }
+                        &-obj {
+                            position: absolute;
+                            left: 0;
+                            top: 0;
+                            right: 0;
+                            bottom: 0;
+                            background-size: 100%;
+                            background-repeat: no-repeat;
+                            background-position: center;
+                            background-image: url(#{$imgCdnPath + 'pc/boxGift6.png'});
+                        }
+                    }
+                }
+            }
+        }
+        .box {
+            &-anime {
+                position: absolute;
+                transform-origin: 50% 70%;
+                left: #{math.div(587px, $activityWidth_pc) * 100%};
+                top: #{math.div(619px, $activityHeight_pc) * 100%};
+                $w: 727px;
+                $h: 343px;
+                @include getImgBoxSize($w, $h, $activityWidth_pc);
+                display: block;
+                @include mob-width {
+                    left: #{math.div(25px, $activityWidth_mb) * 100%};
+                    top: #{math.div(839px, $activityHeight_mb) * 100%};
+                    $w: 583px;
+                    $h: 274px;
+                    @include getImgBoxSize($w, $h, $activityWidth_mb);
+                }
+                &-obj {
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    background: url(#{$imgCdnPath + 'pc/box.png'}) no-repeat center;
+                    background-size: 100%;
+                    @include mob-width {
+                        background: url(#{$imgCdnPath + 'pc/box.png'}) no-repeat center;
+                        background-size: 100%;
+                    }
+                }
+            }
+        }
+        .lottery {
+            &-anime {
+                position: absolute;
+                left: #{math.div(437px, $activityWidth_pc) * 100%};
+                top: #{math.div(961px, $activityHeight_pc) * 100%};
+                $w: 1022px;
+                $h: 108px;
+                @include getImgBoxSize($w, $h, $activityWidth_pc);
+                display: block;
+                @include mob-width {
+                    left: #{math.div(46px, $activityWidth_mb) * 100%};
+                    top: #{math.div(1197px, $activityHeight_mb) * 100%};
+                    $w: 380px;
+                    $h: 173px;
+                    @include getImgBoxSize($w, $h, $activityWidth_mb);
+                }
+                &-obj {
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    background: url(#{$imgCdnPath + 'pc/dyson.png'}) no-repeat center;
+                    background-size: 100%;
+                    @include mob-width {
+                        background: url(#{$imgCdnPath + 'mb/dyson.png'}) no-repeat center;
+                        background-size: 100%;
+                    }
+                }
+            }
+        }
+        .attend {
+            position: absolute;
+            left: #{math.div(1349px, $activityWidth_pc) * 100%};
+            bottom: #{math.div(240px, $activityHeight_pc) * 100%};
+            $w: 284px;
+            $h: 25px;
+            @include getImgBoxSize($w, $h, $activityWidth_pc);
+            display: block;
+            font-size: 25.5px;
+            font-weight: 500;
+            line-height: 1.71;
+            letter-spacing: 3.83px;
+            color: #614131;
+            font-family: $fontfamily;
+            text-align: center;
+            @include mob-width {
+                left: 0;
+                top: #{math.div(1130px, $activityHeight_mb) * 100%};
+                bottom: 0;
+                $w: 640px;
+                $h: 29px;
+                font-size: 4.765625vw;
+                font-weight: 500;
+                @include getImgBoxSize($w, $h, $activityWidth_mb);
+            }
+        }
+        .lineShare {
+            &-anime {
+                cursor: pointer;
+                position: absolute;
+                left: #{math.div(1365px, $activityWidth_pc) * 100%};
+                top: #{math.div(888px, $activityHeight_pc) * 100%};
+                $w: 115px;
+                $h: 46px;
+                @include getImgBoxSize($w, $h, $activityWidth_pc);
+                display: block;
+                transition: ease 0.2s;
+                &:hover {
+                    transform: scale(1.05);
+                }
+                @include mob-width {
+                    left: #{math.div(459px, $activityWidth_mb) * 100%};
+                    top: #{math.div(1233px, $activityHeight_mb) * 100%};
+                    $w: 126px;
+                    $h: 51px;
+                    @include getImgBoxSize($w, $h, $activityWidth_mb);
+                }
+                &-obj {
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    background: url(#{$imgCdnPath + 'pc/line.png'}) no-repeat center;
+                    background-size: 100%;
+                    border-radius: 17px;
+                    @include mob-width {
+                        background: url(#{$imgCdnPath + 'pc/line.png'}) no-repeat center;
+                        background-size: 100%;
+                    }
+                }
+            }
+        }
+        .fbShare {
+            &-anime {
+                cursor: pointer;
+                position: absolute;
+                left: #{math.div(1498px, $activityWidth_pc) * 100%};
+                top: #{math.div(888px, $activityHeight_pc) * 100%};
+                $w: 115px;
+                $h: 46px;
+                @include getImgBoxSize($w, $h, $activityWidth_pc);
+                display: block;
+                transition: ease 0.2s;
+                &:hover {
+                    transform: scale(1.05);
+                }
+                @include mob-width {
+                    left: #{math.div(459px, $activityWidth_mb) * 100%};
+                    top: #{math.div(1298px, $activityHeight_mb) * 100%};
+                    $w: 126px;
+                    $h: 51px;
+                    @include getImgBoxSize($w, $h, $activityWidth_mb);
+                }
+                &-obj {
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    background: url(#{$imgCdnPath + 'pc/fb.png'}) no-repeat center;
+                    background-size: 100%;
+                    border-radius: 17px;
+                    @include mob-width {
+                        background: url(#{$imgCdnPath + 'pc/fb.png'}) no-repeat center;
+                        background-size: 100%;
+                    }
+                }
+            }
+        }
+    }
+    &.bg3Layout {
+        position: relative;
+        overflow: hidden;
+        $bg3Width_pc: 1920px;
+        $bg3Height_pc: 250px;
+        $bg3Width_mb: $mobm-media;
+        $bg3Height_mb: 50px;
+        width: 100%;
+        z-index: 9;
+        pointer-events: none;
+        background: url(#{$imgCdnPath + 'pc/bg3.jpg'}) no-repeat center;
+        background-size: 100%;
+        @include mob-width {
+            background: url(#{$imgCdnPath + 'mb/220815-love-layout-MB_05.jpg'}) no-repeat center;
+        }
+        > .height {
+            display: block;
+            padding-bottom: #{math.div($bg3Height_pc, $bg3Width_pc) * 100%};
+            @include mob-width {
+                padding-bottom: #{math.div($bg3Height_mb, $bg3Width_mb) * 100%};
+            }
+        }
+    }
+    &.bg4Layout {
+        position: relative;
+        //overflow: hidden;
+        $bg4Width_pc: 1920px;
+        $bg4Height_pc: 707px;
+        $bg4Width_mb: $mobm-media;
+        $bg4Height_mb: 1140px;
+        width: 100%;
+        z-index: 9;
+        pointer-events: none;
+        background: url(#{$imgCdnPath + 'pc/bg4.jpg'}) no-repeat center;
+        background-size: 100%;
+        @include mob-width {
+            background: url(#{$imgCdnPath + 'mb/220815-love-layout-MB_06.jpg'}) no-repeat center;
+            background-size: 100%;
+        }
+        > .height {
+            display: block;
+            padding-bottom: #{math.div($bg4Height_pc, $bg4Width_pc) * 100%};
+            @include mob-width {
+                padding-bottom: #{math.div($bg4Height_mb, $bg4Width_mb) * 100%};
+            }
+        }
+        .basketball {
+            &-anime {
+                position: absolute;
+                left: #{math.div(1610px, $bg4Width_pc) * 100%};
+                top: #{math.div(-151px, $bg4Height_pc) * 100%};
+                $w: 165px;
+                $h: 171px;
+                @include getImgBoxSize($w, $h, $bg4Width_pc);
+                display: block;
+                @include mob-width {
+                    left: #{math.div(502px, $bg4Width_mb) * 100%};
+                    top: #{math.div(-77px, $bg4Height_mb) * 100%};
+                    $w: 98px;
+                    $h: 101px;
+                    @include getImgBoxSize($w, $h, $bg4Width_mb);
+                }
+                &-obj {
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    background: url(#{$imgCdnPath + 'pc/basketball.png'}) no-repeat center;
+                    background-size: 100%;
+                    @include mob-width {
+                        background: url(#{$imgCdnPath + 'pc/basketball.png'}) no-repeat center;
+                        background-size: 100%;
+                    }
+                }
+            }
+        }
+        .bg4color {
+            &-anime {
+                position: absolute;
+                left: #{math.div(48px, $bg4Width_pc) * 100%};
+                top: #{math.div(-171px, $bg4Height_pc) * 100%};
+                $w: 197px;
+                $h: 261px;
+                @include getImgBoxSize($w, $h, $bg4Width_pc);
+                display: block;
+                @include mob-width {
+                    left: #{math.div(33px, $bg4Width_mb) * 100%};
+                    top: #{math.div(-100px, $bg4Height_mb) * 100%};
+                    $w: 134px;
+                    $h: 185px;
+                    @include getImgBoxSize($w, $h, $bg4Width_mb);
+                }
+                &-obj {
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    background: url(#{$imgCdnPath + 'pc/color1.png'}) no-repeat center;
+                    background-size: 100%;
+                    @include mob-width {
+                        background: url(#{$imgCdnPath + 'pc/color1.png'}) no-repeat center;
+                        background-size: 100%;
+                    }
+                }
+            }
+        }
+        .colorpen {
+            &-anime {
+                position: absolute;
+                left: #{math.div(-133px, $bg4Width_pc) * 100%};
+                top: #{math.div(51px, $bg4Height_pc) * 100%};
+                $w: 310px;
+                $h: 159px;
+                @include getImgBoxSize($w, $h, $bg4Width_pc);
+                display: block;
+                @include mob-width {
+                    left: #{math.div(-50px, $bg4Width_mb) * 100%};
+                    top: #{math.div(39px, $bg4Height_mb) * 100%};
+                    $w: 190px;
+                    $h: 106px;
+                    @include getImgBoxSize($w, $h, $bg4Width_mb);
+                }
+                &-obj {
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    background: url(#{$imgCdnPath + 'pc/pen2.png'}) no-repeat center;
+                    background-size: 100%;
+                    @include mob-width {
+                        background: url(#{$imgCdnPath + 'pc/pen2.png'}) no-repeat center;
+                        background-size: 100%;
+                    }
+                }
+            }
+        }
+        .colorpen2 {
+            &-anime {
+                position: absolute;
+                left: #{math.div(10px, $bg4Width_pc) * 100%};
+                top: #{math.div(153px, $bg4Height_pc) * 100%};
+                $w: 173px;
+                $h: 133px;
+                @include getImgBoxSize($w, $h, $bg4Width_pc);
+                display: block;
+                @include mob-width {
+                    left: #{math.div(18px, $bg4Width_mb) * 100%};
+                    top: #{math.div(114px, $bg4Height_mb) * 100%};
+                    $w: 115px;
+                    $h: 89px;
+                    @include getImgBoxSize($w, $h, $bg4Width_mb);
+                }
+                &-obj {
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    background: url(#{$imgCdnPath + 'pc/pen2.png'}) no-repeat center;
+                    background-size: 100%;
+                    transform: rotate(350deg);
+                    @include mob-width {
+                        background: url(#{$imgCdnPath + 'pc/pen2.png'}) no-repeat center;
+                        background-size: 100%;
+                    }
+                }
+            }
+        }
+        .zhen_2 {
+            &-anime {
+                position: absolute;
+                left: #{math.div(162px, $bg4Width_pc) * 100%};
+                top: #{math.div(125px, $bg4Height_pc) * 100%};
+                $w: 537px;
+                $h: 519px;
+                @include getImgBoxSize($w, $h, $bg4Width_pc);
+                display: block;
+                @include mob-width {
+                    left: #{math.div(-50px, $bg4Width_mb) * 100%};
+                    top: #{math.div(261px, $bg4Height_mb) * 100%};
+                    $w: 320px;
+                    $h: 339px;
+                    @include getImgBoxSize($w, $h, $bg4Width_mb);
+                }
+                &-obj {
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    background: url(#{$imgCdnPath + 'pc/zhen_2.png'}) no-repeat center;
+                    background-size: 100%;
+                    @include mob-width {
+                        background: url(#{$imgCdnPath + 'mb/zhen_2.png'}) no-repeat center;
+                        background-size: 100%;
+                    }
+                }
+            }
+        }
+        .pic_2 {
+            &-anime {
+                position: absolute;
+                left: #{math.div(1231px, $bg4Width_pc) * 100%};
+                top: #{math.div(137px, $bg4Height_pc) * 100%};
+                $w: 346px;
+                $h: 412px;
+                @include getImgBoxSize($w, $h, $bg4Width_pc);
+                display: block;
+                @include mob-width {
+                    left: #{math.div(332px, $bg4Width_mb) * 100%};
+                    top: #{math.div(580px, $bg4Height_mb) * 100%};
+                    $w: 273px;
+                    $h: 364px;
+                    @include getImgBoxSize($w, $h, $bg4Width_mb);
+                }
+                &-obj {
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    background: url(#{$imgCdnPath + 'pc/pic_2.png'}) no-repeat center;
+                    background-size: 100%;
+                    @include mob-width {
+                        background: url(#{$imgCdnPath + 'mb/pic.png'}) no-repeat center;
+                        background-size: 100%;
+                    }
+                }
+            }
+        }
+        .bg4Icon {
+            &-anime {
+                position: absolute;
+                left: #{math.div(1667px, $bg4Width_pc) * 100%};
+                top: #{math.div(455px, $bg4Height_pc) * 100%};
+                $w: 45px;
+                $h: 64px;
+                @include getImgBoxSize($w, $h, $bg4Width_pc);
+                display: block;
+                @include mob-width {
+                    left: #{math.div(275px, $bg4Width_mb) * 100%};
+                    top: #{math.div(960px, $bg4Height_mb) * 100%};
+                    $w: 30px;
+                    $h: 42px;
+                    @include getImgBoxSize($w, $h, $bg4Width_mb);
+                }
+                &-obj {
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    background: url(#{$imgCdnPath + 'pc/joinIcon3.png'}) no-repeat center;
+                    background-size: 100%;
+                }
+            }
+        }
+        .bg4Icon2 {
+            &-anime {
+                position: absolute;
+                left: #{math.div(1739px, $bg4Width_pc) * 100%};
+                top: #{math.div(421px, $bg4Height_pc) * 100%};
+                $w: 81px;
+                $h: 79px;
+                @include getImgBoxSize($w, $h, $bg4Width_pc);
+                display: block;
+                @include mob-width {
+                    left: #{math.div(301px, $bg4Width_mb) * 100%};
+                    top: #{math.div(1021px, $bg4Height_mb) * 100%};
+                    $w: 54px;
+                    $h: 52px;
+                    @include getImgBoxSize($w, $h, $bg4Width_mb);
+                }
+                &-obj {
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    background: url(#{$imgCdnPath + 'pc/bannerIcon2.png'}) no-repeat center;
+                    background-size: 100%;
+                }
+            }
+        }
+        .bg4Des {
+            position: absolute;
+            width: 100%;
+            height: 691px;
+            $bg4DesWidth_pc: 480px;
+            $bg4DesHeight_pc: 691px;
+            $bg4DesWidth_mb: $mobm-media;
+            $bg4DesHeight_mb: 956px;
+            @include mob-width {
+                $w: 640px;
+                $h: 956px;
+                height: 956px;
+                @include getImgBoxSize($w, $h, $bg4Width_mb);
+            }
+            .wrap {
+                position: relative;
+                $w: 480px;
+                $h: 0px;
+                @include getImgBoxSize($w, $h, $bg4Width_pc);
+                margin: auto;
+                @include mob-width {
+                    $w: 603px;
+                    $h: 0px;
+                    @include getImgBoxSize($w, $h, $bg4DesWidth_mb);
+                }
+                .logo {
+                    &-anime {
+                        position: relative;
+                        margin: auto;
+                        margin-top: 14.7916%;
+                        $w: 193px;
+                        $h: 44px;
+                        @include getImgBoxSize($w, $h, $bg4DesWidth_pc);
+                        display: block;
+                        @include mob-width {
+                            margin-top: 25%;
+                            $w: 186px;
+                            $h: 43px;
+                            @include getImgBoxSize($w, $h, $bg4DesWidth_mb);
+                        }
+                        &-obj {
+                            position: absolute;
+                            left: 0;
+                            top: 0;
+                            right: 0;
+                            bottom: 0;
+                            background: url(#{$imgCdnPath + 'pc/logo_2.png'}) no-repeat center;
+                            background-size: 100%;
+                        }
+                    }
+                }
+                .title {
+                    text-align: center;
+                    font-size: 2.2395vw;
+                    font-weight: 500;
+                    letter-spacing: 0.2239px;
+                    color: #614131;
+                    font-family: 'mplus';
+                    @include mob-width {
+                        font-size: 6.4843vw;
+                        line-height: 2;
+                        letter-spacing: 4.15px;
+                    }
+                }
+                .des1 {
+                    margin-top: 2.0833vw;
+                    //margin-top: 8.3333%;
+                    font-size: 1.0677vw;
+                    font-family: $fontfamily;
+                    line-height: 2.2656vw;
+                    color: #614131;
+                    font-weight: normal;
+                    letter-spacing: 0;
+                    @include mob-width {
+                        position: relative;
+                        width: 50%;
+                        margin-left: #{math.div(290px, $bg4DesWidth_mb) * 100%};
+                        margin-top: #{math.div(35px, $bg4DesHeight_mb) * 100%};
+                        font-size: 3.2vw;
+                        line-height: 1.8;
+                        letter-spacing: -0.21px;
+                    }
+                }
+                .des2 {
+                    margin-top: 1.5625vw;
+                    //margin-top: 6.25%;
+                    font-size: 1.0677vw;
+                    font-family: $fontfamily;
+                    line-height: 2.2656vw;
+                    color: #614131;
+                    font-weight: normal;
+                    letter-spacing: 0;
+                    @include mob-width {
+                        position: relative;
+                        width: 47.3%;
+                        margin-left: #{math.div(20px, $bg4DesWidth_mb) * 100%};
+                        margin-top: #{math.div(120px, $bg4DesHeight_mb) * 100%};
+                        font-size: 3.2vw;
+                        line-height: 1.8;
+                        letter-spacing: -0.21px;
+                    }
+                }
+            }
+        }
+    }
+    &.bg5Layout {
+        position: relative;
+        //overflow: hidden;
+        $bg5Width_pc: 1920px;
+        $bg5Height_pc: 305px;
+        $bg5Width_mb: $mobm-media;
+        $bg5Height_mb: 60px;
+        width: 100%;
+        z-index: 9;
+        //pointer-events: none;
+        background: url(#{$imgCdnPath + 'pc/bg2.jpg'}) no-repeat center;
+        background-size: 100%;
+        @include mob-width {
+            background: url(#{$imgCdnPath + 'mb/220815-love-layout-MB_03.jpg'}) no-repeat center;
+        }
+        > .height {
+            display: block;
+            padding-bottom: #{math.div($bg5Height_pc, $bg5Width_pc) * 100%};
+            @include mob-width {
+                padding-bottom: #{math.div($bg5Height_mb, $bg5Width_mb) * 100%};
+            }
+        }
+        .bg5Icon {
+            &-anime {
+                position: absolute;
+                left: #{math.div(264px, $bg5Width_pc) * 100%};
+                top: #{math.div(71px, $bg5Height_pc) * 100%};
+                $w: 117px;
+                $h: 105px;
+                @include getImgBoxSize($w, $h, $bg5Width_pc);
+                display: block;
+                @include mob-width {
+                    left: #{math.div(94px, $bg5Width_mb) * 100%};
+                    top: #{math.div(0px, $bg5Height_mb) * 100%};
+                    $w: 69px;
+                    $h: 62px;
+                    @include getImgBoxSize($w, $h, $bg5Width_mb);
+                }
+                &-obj {
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    background: url(#{$imgCdnPath + 'pc/color2.png'}) no-repeat center;
+                    background-size: 100%;
+                }
+            }
+        }
+        .drum {
+            &-anime {
+                position: absolute;
+                left: #{math.div(1432px, $bg5Width_pc) * 100%};
+                top: #{math.div(-190px, $bg5Height_pc) * 100%};
+                $w: 342px;
+                $h: 284px;
+                @include getImgBoxSize($w, $h, $bg5Width_pc);
+                display: block;
+                @include mob-width {
+                    left: #{math.div(390px, $bg5Width_mb) * 100%};
+                    top: #{math.div(-225px, $bg5Height_mb) * 100%};
+                    $w: 230px;
+                    $h: 195px;
+                    @include getImgBoxSize($w, $h, $bg5Width_mb);
+                }
+                &-obj {
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    background: url(#{$imgCdnPath + 'pc/drum.png'}) no-repeat center;
+                    background-size: 100%;
+                }
+            }
+        }
+    }
+    &.celebrity {
+        position: relative;
+        width: 100%;
+        $clbWidth_pc: 1920px;
+        $clbHeight_pc: 995px;
+        $clbWidth_mb: $mobm-media;
+        $clbHeight_mb: 1036px;
+        background-color: #faf0d5;
+        z-index: 9;
+        .title {
+            &-anime {
+                position: relative;
+                margin: auto;
+                $w: 372px;
+                $h: 75px;
+                @include getImgBoxSize($w, $h, $clbWidth_pc);
+                display: block;
+                @include mob-width {
+                    padding-top: #{math.div(98px, $clbHeight_mb) * 100%};
+                    $w: 349px;
+                    $h: 70px;
+                    @include getImgBoxSize($w, $h, $clbWidth_mb);
+                }
+                &-obj {
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    background: url(#{$imgCdnPath + 'pc/title_2.png'}) no-repeat center;
+                    background-size: 100%;
+                    border-radius: 17px;
+                }
+            }
+        }
+        .color3 {
+            &-anime {
+                position: absolute;
+                left: #{math.div(28px, $clbWidth_pc) * 100%};
+                top: #{math.div(285px, $clbHeight_pc) * 100%};
+                $w: 232px;
+                $h: 234px;
+                @include getImgBoxSize($w, $h, $clbWidth_pc);
+                display: block;
+                @include mob-width {
+                    top: #{math.div(730px, $clbHeight_mb) * 100%};
+                    left: #{math.div(-34px, $clbWidth_mb) * 100%};
+                    $w: 166px;
+                    $h: 167px;
+                    @include getImgBoxSize($w, $h, $clbWidth_mb);
+                }
+                &-obj {
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    background: url(#{$imgCdnPath + 'pc/color3.png'}) no-repeat center;
+                    background-size: 100%;
+                }
+            }
+        }
+        .paint {
+            &-anime {
+                position: absolute;
+                left: #{math.div(1654px, $clbWidth_pc) * 100%};
+                top: #{math.div(-52px, $clbHeight_pc) * 100%};
+                $w: 359px;
+                $h: 341px;
+                @include getImgBoxSize($w, $h, $clbWidth_pc);
+                display: block;
+                @include mob-width {
+                    top: #{math.div(0px, $clbHeight_mb) * 100%};
+                    left: #{math.div(491px, $clbWidth_mb) * 100%};
+                    $w: 230px;
+                    $h: 218px;
+                    @include getImgBoxSize($w, $h, $clbWidth_mb);
+                }
+                &-obj {
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    background: url(#{$imgCdnPath + 'pc/paint.png'}) no-repeat center;
+                    background-size: 100%;
+                }
+            }
+        }
+        .paint2 {
+            &-anime {
+                position: absolute;
+                left: #{math.div(1539px, $clbWidth_pc) * 100%};
+                top: #{math.div(296px, $clbHeight_pc) * 100%};
+                $w: 208px;
+                $h: 161px;
+                @include getImgBoxSize($w, $h, $clbWidth_pc);
+                display: block;
+                @include mob-width {
+                    display: none;
+                }
+                &-obj {
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    background: url(#{$imgCdnPath + 'pc/paint2.png'}) no-repeat center;
+                    background-size: 100%;
+                    @include mob-width {
+                        background: url(#{$imgCdnPath + 'mb/bg-banner.jpg'}) no-repeat center;
+                        background-size: 100%;
+                    }
+                }
+            }
+        }
+        .guitar {
+            &-anime {
+                position: absolute;
+                left: #{math.div(1625px, $clbWidth_pc) * 100%};
+                top: #{math.div(590px, $clbHeight_pc) * 100%};
+                $w: 305px;
+                $h: 374px;
+                @include getImgBoxSize($w, $h, $clbWidth_pc);
+                display: block;
+                @include mob-width {
+                    top: #{math.div(690px, $clbHeight_mb) * 100%};
+                    left: #{math.div(455px, $clbWidth_mb) * 100%};
+                    $w: 195px;
+                    $h: 240px;
+                    @include getImgBoxSize($w, $h, $clbWidth_mb);
+                }
+                &-obj {
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    background: url(#{$imgCdnPath + 'pc/gt.png'}) no-repeat center;
+                    background-size: 100%;
+                }
+            }
+        }
+        .cardwrap{
+            max-width: 1220px;
+            margin: 78px auto 0 auto;
+            @include mob-width {
+                max-width: 524px;
+                margin:59px auto 0 auto;
+                padding: 0 20px;
+            }
+            .card {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                padding-bottom: 11.25vw;
+                justify-content: flex-start;
+                //margin-bottom: -1px;
+                @include mob-width {
+                    width: auto;
+                    margin: -15px -10px;
+                    padding-bottom: 27.3437vw;
+                }
+                > * {
+                    @include mob-width {
+                        padding: 15px 10px;
+                    }
+                }
+                @for $i from 1 through 26 {
+                    .card__#{$i} {
+                        position: relative;
+                        margin: 0 17px 80px 17px;
+                        width: 210px;
+                        height: 301px;
+                        @include mob-width {
+                            width: 50%;
+                            height: auto;
+                            margin: auto;
+                        }
+                        span {
+                            font-size: 21px;
+                            color: #614131;
+                            line-height: 1.45;
+                            letter-spacing: 3.78px;
+                            position: absolute;
+                            top: 314px;
+                            text-align: center;
+                            width: 100%;
+                            @include mob-width {
+                                text-align: center;
+                                margin: 5px auto 0 auto;
+                                position: relative;
+                                top: unset;
+                                left: unset;
+                                transform: none;
+                                display: block;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        
+    }
+    &.almanac {
+        //padding-top: 63px;
+        position: relative;
+        width: 100%;
+        $albWidth_pc: 1920px;
+        $albHeight_pc: 895px;
+        $albWidth_mb: $mobm-media;
+        $albHeight_mb: 1628px;
+        background-color: #faf0d5;
+        width: 100%;
+        z-index: 9;
+        > .height {
+            display: block;
+            padding-bottom: #{math.div($albHeight_pc, $albWidth_pc) * 100%};
+            @include mob-width {
+                padding-bottom: #{math.div($albHeight_mb, $albWidth_mb) * 100%};
+            }
+        }
+        .title {
+            &-anime {
+                position: relative;
+                margin: auto;
+                $w: 372px;
+                $h: 75px;
+                @include getImgBoxSize($w, $h, $albWidth_pc);
+                display: block;
+                @include mob-width {
+                    $w: 445px;
+                    $h: 74px;
+                    @include getImgBoxSize($w, $h, $albWidth_mb);
+                }
+                &-obj {
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    background: url(#{$imgCdnPath + 'pc/title.png'}) no-repeat center;
+                    background-size: 100%;
+                    border-radius: 17px;
+                }
+            }
+        }
+        .pen3 {
+            &-anime {
+                position: absolute;
+                left: #{math.div(-10px, $albWidth_pc) * 100%};
+                top: #{math.div(-10px, $albHeight_pc) * 100%};
+                $w: 294px;
+                $h: 231px;
+                @include getImgBoxSize($w, $h, $albWidth_pc);
+                display: block;
+                @include mob-width {
+                    left: #{math.div(-273px, $albWidth_mb) * 100%};
+                    top: #{math.div(-110px, $albHeight_mb) * 100%};
+                    $w: 432px;
+                    $h: 338px;
+                    @include getImgBoxSize($w, $h, $albWidth_mb);
+                }
+                @include mobs-width {
+                    top: #{math.div(-50px, $albHeight_mb) * 100%};
+                }
+                &-obj {
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    background: url(#{$imgCdnPath + 'pc/pen3.png'}) no-repeat center;
+                    background-size: 100%;
+                    border-radius: 17px;
+                    @include mob-width {
+                        background: url(#{$imgCdnPath + 'mb/pen3.png'}) no-repeat center;
+                        background-size: 100%;
+                    }
+                }
+            }
+        }
+        .line {
+            padding-bottom: 50px;
+            &-anime {
+                position: relative;
+                $w: 1920px;
+                $h: 890px;
+                $lineWidth_pc: 1920px;
+                $lineHeight_pc: 890px;
+                $lineWidth_mb: $mobm-media;
+                $lineHeight_mb: 1430px;
+                @include getImgBoxSize($w, $h, $albWidth_pc);
+                display: block;
+                @include mob-width {
+                    $w: 640px;
+                    $h: 1430px;
+                    margin-top: 100px;
+                    @include getImgBoxSize($w, $h, $albWidth_mb);
+                }
+                @include mobs-width {
+                    margin-top: 60px;
+                }
+                &-obj {
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    background: url(#{$imgCdnPath + 'pc/line-01.svg'}) no-repeat center;
+                    background-size: 100%;
+                    border-radius: 17px;
+                    @include mob-width {
+                        background: url(#{$imgCdnPath + 'mb/line-MB-2.svg'}) no-repeat center;
+                        background-size: 100%;
+                    }
+                    #line_svg {
+                        transition: stroke-dashoffset 0.5s cubic-bezier(0.25, 0.1, 0.28, 0.79) 0s;
+                        display: block;
+                        transform: translateY(5px);
+                        @include mob-width {
+                            display: none;
+                        }
+                    }
+                    .line_svg2 {
+                        //visibility: hidden;
+                        transform-origin: left;
+                        opacity: 0;
+                    }
+                    #line_svg_mb {
+                        transition: stroke-dashoffset 0.5s cubic-bezier(0.25, 0.1, 0.28, 0.79) 0s;
+                        display: none;
+                        @include mob-width {
+                            display: block;
+                        }
+                    }
+                    .grass {
+                        @for $i from 1 through 3 {
+                            .grass__#{$i} {
+                                &-anime {
+                                    position: absolute;
+                                    @include mob-width {
+                                        display: none;
+                                    }
+                                    @if $i == 1 {
+                                        $w: 54px;
+                                        $h: 53px;
+                                        left: #{math.div(317px, $lineWidth_pc) * 100%};
+                                        top: #{math.div(172px, $lineHeight_pc) * 100%};
+                                        @include getImgBoxSize($w, $h, $lineWidth_pc);
+                                        @include mob-width {
+                                            $w: 221px;
+                                            $h: 57px;
+                                            @include getImgBoxSize($w, $h, $albWidth_mb);
+                                        }
+                                    } @else if $i == 2 {
+                                        $w: 44px;
+                                        $h: 43px;
+                                        left: #{math.div(882px, $lineWidth_pc) * 100%};
+                                        top: #{math.div(557px, $lineHeight_pc) * 100%};
+                                        @include getImgBoxSize($w, $h, $lineWidth_pc);
+                                        @include mob-width {
+                                            $w: 294px;
+                                            $h: 59px;
+                                            @include getImgBoxSize($w, $h, $albWidth_mb);
+                                        }
+                                    } @else if $i == 3 {
+                                        $w: 52px;
+                                        $h: 51px;
+                                        left: #{math.div(1519px, $lineWidth_pc) * 100%};
+                                        top: #{math.div(551px, $lineHeight_pc) * 100%};
+                                        @include getImgBoxSize($w, $h, $lineWidth_pc);
+                                        @include mob-width {
+                                            $w: 640px;
+                                            $h: 88px;
+                                            @include getImgBoxSize($w, $h, $albWidth_mb);
+                                            left: 0;
+                                        }
+                                    }
+                                    &-obj {
+                                        position: absolute;
+                                        left: 0;
+                                        top: 0;
+                                        right: 0;
+                                        bottom: 0;
+                                        background-size: 100%;
+                                        background-repeat: no-repeat;
+                                        background-position: center;
+                                        background-image: url(#{$imgCdnPath + 'pc/grass.png'});
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .lineLoc {
+                        @for $i from 1 through 9 {
+                            .lineLoc__#{$i} {
+                                &-anime {
+                                    position: absolute;
+                                    $w: 32px;
+                                    $h: 43px;
+                                    @include getImgBoxSize($w, $h, $lineWidth_pc);
+                                    @include mob-width {
+                                        @include getImgBoxSize($w, $h, $lineWidth_mb);
+                                    }
+                                    @if $i == 1 {
+                                        left: #{math.div(294px, $lineWidth_pc) * 100%};
+                                        top: #{math.div(321px, $lineHeight_pc) * 100%};
+                                        @include mob-width {
+                                            left: #{math.div(161px, $lineWidth_mb) * 100%};
+                                            top: #{math.div(115px, $lineHeight_mb) * 100%};
+                                        }
+                                    } @else if $i == 2 {
+                                        left: #{math.div(485px, $lineWidth_pc) * 100%};
+                                        top: #{math.div(152px, $lineHeight_pc) * 100%};
+                                        @include mob-width {
+                                            left: #{math.div(358px, $lineWidth_mb) * 100%};
+                                            top: #{math.div(68px, $lineHeight_mb) * 100%};
+                                        }
+                                    } @else if $i == 3 {
+                                        left: #{math.div(677px, $lineWidth_pc) * 100%};
+                                        top: #{math.div(363px, $lineHeight_pc) * 100%};
+                                        @include mob-width {
+                                            left: #{math.div(441px, $lineWidth_mb) * 100%};
+                                            top: #{math.div(391px, $lineHeight_mb) * 100%};
+                                        }
+                                    } @else if $i == 4 {
+                                        left: #{math.div(955px, $lineWidth_pc) * 100%};
+                                        top: #{math.div(264px, $lineHeight_pc) * 100%};
+                                        @include mob-width {
+                                            left: #{math.div(18px, $lineWidth_mb) * 100%};
+                                            top: #{math.div(514px, $lineHeight_mb) * 100%};
+                                        }
+                                    } @else if $i == 5 {
+                                        left: #{math.div(1224px, $lineWidth_pc) * 100%};
+                                        top: #{math.div(364px, $lineHeight_pc) * 100%};
+                                        @include mob-width {
+                                            left: #{math.div(127px, $lineWidth_mb) * 100%};
+                                            top: #{math.div(631px, $lineHeight_mb) * 100%};
+                                        }
+                                    } @else if $i == 6 {
+                                        left: #{math.div(775px, $lineWidth_pc) * 100%};
+                                        top: #{math.div(541px, $lineHeight_pc) * 100%};
+                                        @include mob-width {
+                                            left: #{math.div(478px, $lineWidth_mb) * 100%};
+                                            top: #{math.div(603px, $lineHeight_mb) * 100%};
+                                        }
+                                    } @else if $i == 7 {
+                                        left: #{math.div(1032px, $lineWidth_pc) * 100%};
+                                        top: #{math.div(660px, $lineHeight_pc) * 100%};
+                                        @include mob-width {
+                                            left: #{math.div(444px, $lineWidth_mb) * 100%};
+                                            top: #{math.div(918px, $lineHeight_mb) * 100%};
+                                        }
+                                    } @else if $i == 8 {
+                                        left: #{math.div(1331px, $lineWidth_pc) * 100%};
+                                        top: #{math.div(620px, $lineHeight_pc) * 100%};
+                                        @include mob-width {
+                                            left: #{math.div(65px, $lineWidth_mb) * 100%};
+                                            top: #{math.div(962px, $lineHeight_mb) * 100%};
+                                        }
+                                    } @else if $i == 9 {
+                                        left: #{math.div(1562px, $lineWidth_pc) * 100%};
+                                        top: #{math.div(429px, $lineHeight_pc) * 100%};
+                                        @include mob-width {
+                                            left: #{math.div(192px, $lineWidth_mb) * 100%};
+                                            top: #{math.div(1264px, $lineHeight_mb) * 100%};
+                                        }
+                                    }
+                                    &-obj {
+                                        position: absolute;
+                                        left: 0;
+                                        top: 0;
+                                        right: 0;
+                                        bottom: 0;
+                                        background-size: 100%;
+                                        background-repeat: no-repeat;
+                                        background-position: center;
+                                        background-image: url(#{$imgCdnPath + 'pc/location.png'});
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .lineIcon {
+                        @for $i from 1 through 9 {
+                            .lineIcon__#{$i} {
+                                &-anime {
+                                    position: absolute;
+                                    transform: scale(0.3);
+                                    @if $i == 1 {
+                                        left: #{math.div(230px, $lineWidth_pc) * 100%};
+                                        top: #{math.div(465px, $lineHeight_pc) * 100%};
+                                        $w: 172px;
+                                        $h: 141px;
+                                        transform-origin: top;
+                                        @include getImgBoxSize($w, $h, $lineWidth_pc);
+                                        @include mob-width {
+                                            left: #{math.div(104px, $lineWidth_mb) * 100%};
+                                            top: #{math.div(205px, $lineHeight_mb) * 100%};
+                                            $w: 164px;
+                                            $h: 136px;
+                                            @include getImgBoxSize($w, $h, $lineWidth_mb);
+                                        }
+                                    } @else if $i == 2 {
+                                        left: #{math.div(554px, $lineWidth_pc) * 100%};
+                                        top: #{math.div(102px, $lineHeight_pc) * 100%};
+                                        $w: 162px;
+                                        $h: 131px;
+                                        transform-origin: left;
+                                        @include getImgBoxSize($w, $h, $lineWidth_pc);
+                                        @include mob-width {
+                                            transform-origin: right;
+                                            left: #{math.div(229px, $lineWidth_mb) * 100%};
+                                            top: #{math.div(-58px, $lineHeight_mb) * 100%};
+                                            $w: 154px;
+                                            $h: 124px;
+                                            @include getImgBoxSize($w, $h, $lineWidth_mb);
+                                        }
+                                    } @else if $i == 3 {
+                                        left: #{math.div(470px, $lineWidth_pc) * 100%};
+                                        top: #{math.div(363px, $lineHeight_pc) * 100%};
+                                        $w: 152px;
+                                        $h: 130px;
+                                        transform-origin: right;
+                                        @include getImgBoxSize($w, $h, $lineWidth_pc);
+                                        @include mob-width {
+                                            transform-origin: bottom;
+                                            left: #{math.div(382px, $lineWidth_mb) * 100%};
+                                            top: #{math.div(250px, $lineHeight_mb) * 100%};
+                                            $w: 144px;
+                                            $h: 123px;
+                                            @include getImgBoxSize($w, $h, $lineWidth_mb);
+                                        }
+                                    } @else if $i == 4 {
+                                        left: #{math.div(1037px, $lineWidth_pc) * 100%};
+                                        top: #{math.div(154px, $lineHeight_pc) * 100%};
+                                        $w: 156px;
+                                        $h: 119px;
+                                        transform-origin: left;
+                                        @include getImgBoxSize($w, $h, $lineWidth_pc);
+                                        @include mob-width {
+                                            left: #{math.div(180px, $lineWidth_mb) * 100%};
+                                            top: #{math.div(473px, $lineHeight_mb) * 100%};
+                                            $w: 150px;
+                                            $h: 113px;
+                                            @include getImgBoxSize($w, $h, $lineWidth_mb);
+                                        }
+                                    } @else if $i == 5 {
+                                        left: #{math.div(1258px, $lineWidth_pc) * 100%};
+                                        top: #{math.div(246px, $lineHeight_pc) * 100%};
+                                        $w: 138px;
+                                        $h: 119px;
+                                        transform-origin: bottom;
+                                        @include getImgBoxSize($w, $h, $lineWidth_pc);
+                                        @include mob-width {
+                                            transform-origin: top;
+                                            left: #{math.div(76px, $lineWidth_mb) * 100%};
+                                            top: #{math.div(736px, $lineHeight_mb) * 100%};
+                                            $w: 132px;
+                                            $h: 110px;
+                                            @include getImgBoxSize($w, $h, $lineWidth_mb);
+                                        }
+                                    } @else if $i == 6 {
+                                        left: #{math.div(625px, $lineWidth_pc) * 100%};
+                                        top: #{math.div(619px, $lineHeight_pc) * 100%};
+                                        $w: 146px;
+                                        $h: 145px;
+                                        transform-origin: top;
+                                        @include getImgBoxSize($w, $h, $lineWidth_pc);
+                                        @include mob-width {
+                                            transform-origin: right top;
+                                            left: #{math.div(275px, $lineWidth_mb) * 100%};
+                                            top: #{math.div(656px, $lineHeight_mb) * 100%};
+                                            $w: 139px;
+                                            $h: 138px;
+                                            @include getImgBoxSize($w, $h, $lineWidth_mb);
+                                        }
+                                    } @else if $i == 7 {
+                                        left: #{math.div(978px, $lineWidth_pc) * 100%};
+                                        top: #{math.div(715px, $lineHeight_pc) * 100%};
+                                        $w: 144px;
+                                        $h: 125px;
+                                        transform-origin: top;
+                                        @include getImgBoxSize($w, $h, $lineWidth_pc);
+                                        @include mob-width {
+                                            transform-origin: bottom;
+                                            left: #{math.div(398px, $lineWidth_mb) * 100%};
+                                            top: #{math.div(799px, $lineHeight_mb) * 100%};
+                                            $w: 137px;
+                                            $h: 119px;
+                                            @include getImgBoxSize($w, $h, $lineWidth_mb);
+                                        }
+                                    } @else if $i == 8 {
+                                        left: #{math.div(1275px, $lineWidth_pc) * 100%};
+                                        top: #{math.div(686px, $lineHeight_pc) * 100%};
+                                        $w: 153px;
+                                        $h: 127px;
+                                        transform-origin: top;
+                                        @include getImgBoxSize($w, $h, $lineWidth_pc);
+                                        @include mob-width {
+                                            left: #{math.div(94px, $lineWidth_mb) * 100%};
+                                            top: #{math.div(1021px, $lineHeight_mb) * 100%};
+                                            $w: 146px;
+                                            $h: 121px;
+                                            @include getImgBoxSize($w, $h, $lineWidth_mb);
+                                        }
+                                    } @else if $i == 9 {
+                                        left: #{math.div(1504px, $lineWidth_pc) * 100%};
+                                        top: #{math.div(200px, $lineHeight_pc) * 100%};
+                                        $w: 143px;
+                                        $h: 198px;
+                                        transform-origin: center 75%;
+                                        @include getImgBoxSize($w, $h, $lineWidth_pc);
+                                        @include mob-width {
+                                            transform-origin: top;
+                                            left: #{math.div(98px, $lineWidth_mb) * 100%};
+                                            top: #{math.div(1316px, $lineHeight_mb) * 100%};
+                                            $w: 136px;
+                                            $h: 93px;
+                                            @include getImgBoxSize($w, $h, $lineWidth_mb);
+                                        }
+                                    }
+                                    &-obj {
+                                        position: absolute;
+                                        left: 0;
+                                        top: 0;
+                                        right: 0;
+                                        bottom: 0;
+                                        background-size: 100%;
+                                        background-repeat: no-repeat;
+                                        background-position: center;
+                                        @if $i == 1 {
+                                            background-image: url(#{$imgCdnPath + 'pc/2013-p.png'});
+                                        } @else if $i == 2 {
+                                            background-image: url(#{$imgCdnPath + 'pc/2014-p.png'});
+                                        } @else if $i == 3 {
+                                            background-image: url(#{$imgCdnPath + 'pc/2015-p.png'});
+                                        } @else if $i == 4 {
+                                            background-image: url(#{$imgCdnPath + 'pc/2016-p.png'});
+                                        } @else if $i == 5 {
+                                            background-image: url(#{$imgCdnPath + 'pc/2017-p.png'});
+                                        } @else if $i == 6 {
+                                            background-image: url(#{$imgCdnPath + 'pc/2018-p.png'});
+                                        } @else if $i == 7 {
+                                            background-image: url(#{$imgCdnPath + 'pc/2019-p.png'});
+                                        } @else if $i == 8 {
+                                            background-image: url(#{$imgCdnPath + 'pc/2020-p.png'});
+                                        } @else if $i == 9 {
+                                            background-image: url(#{$imgCdnPath + 'pc/2021-p.png'});
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .lineTitle {
+                        @for $i from 1 through 9 {
+                            .lineTitle__#{$i} {
+                                &-anime {
+                                    position: absolute;
+                                    @if $i == 1 {
+                                        left: #{math.div(265px, $lineWidth_pc) * 100%};
+                                        top: #{math.div(408px, $lineHeight_pc) * 100%};
+                                        $w: 102px;
+                                        $h: 52px;
+                                        @include getImgBoxSize($w, $h, $lineWidth_pc);
+                                        @include mob-width {
+                                            left: #{math.div(121px, $lineWidth_mb) * 100%};
+                                            top: #{math.div(158px, $lineHeight_mb) * 100%};
+                                            $w: 110px;
+                                            $h: 54px;
+                                            @include getImgBoxSize($w, $h, $lineWidth_mb);
+                                        }
+                                    } @else if $i == 2 {
+                                        left: #{math.div(448px, $lineWidth_pc) * 100%};
+                                        top: #{math.div(206px, $lineHeight_pc) * 100%};
+                                        $w: 101px;
+                                        $h: 54px;
+                                        @include getImgBoxSize($w, $h, $lineWidth_pc);
+                                        @include mob-width {
+                                            left: #{math.div(317px, $lineWidth_mb) * 100%};
+                                            top: #{math.div(111px, $lineHeight_mb) * 100%};
+                                            $w: 109px;
+                                            $h: 57px;
+                                            @include getImgBoxSize($w, $h, $lineWidth_mb);
+                                        }
+                                    } @else if $i == 3 {
+                                        left: #{math.div(634px, $lineWidth_pc) * 100%};
+                                        top: #{math.div(417px, $lineHeight_pc) * 100%};
+                                        $w: 102px;
+                                        $h: 52px;
+                                        @include getImgBoxSize($w, $h, $lineWidth_pc);
+                                        @include mob-width {
+                                            left: #{math.div(405px, $lineWidth_mb) * 100%};
+                                            top: #{math.div(438px, $lineHeight_mb) * 100%};
+                                            $w: 110px;
+                                            $h: 56px;
+                                            @include getImgBoxSize($w, $h, $lineWidth_mb);
+                                        }
+                                    } @else if $i == 4 {
+                                        left: #{math.div(921px, $lineWidth_pc) * 100%};
+                                        top: #{math.div(199px, $lineHeight_pc) * 100%};
+                                        $w: 102px;
+                                        $h: 53px;
+                                        @include getImgBoxSize($w, $h, $lineWidth_pc);
+                                        @include mob-width {
+                                            left: #{math.div(56px, $lineWidth_mb) * 100%};
+                                            top: #{math.div(510px, $lineHeight_mb) * 100%};
+                                            $w: 109px;
+                                            $h: 57px;
+                                            @include getImgBoxSize($w, $h, $lineWidth_mb);
+                                        }
+                                    } @else if $i == 5 {
+                                        left: #{math.div(1263px, $lineWidth_pc) * 100%};
+                                        top: #{math.div(378px, $lineHeight_pc) * 100%};
+                                        $w: 127px;
+                                        $h: 52px;
+                                        @include getImgBoxSize($w, $h, $lineWidth_pc);
+                                        @include mob-width {
+                                            left: #{math.div(76px, $lineWidth_mb) * 100%};
+                                            top: #{math.div(680px, $lineHeight_mb) * 100%};
+                                            $w: 140px;
+                                            $h: 53px;
+                                            @include getImgBoxSize($w, $h, $lineWidth_mb);
+                                        }
+                                    } @else if $i == 6 {
+                                        left: #{math.div(639px, $lineWidth_pc) * 100%};
+                                        top: #{math.div(547px, $lineHeight_pc) * 100%};
+                                        $w: 128px;
+                                        $h: 53px;
+                                        @include getImgBoxSize($w, $h, $lineWidth_pc);
+                                        @include mob-width {
+                                            left: #{math.div(426px, $lineWidth_mb) * 100%};
+                                            top: #{math.div(651px, $lineHeight_mb) * 100%};
+                                            $w: 138px;
+                                            $h: 57px;
+                                            @include getImgBoxSize($w, $h, $lineWidth_mb);
+                                        }
+                                    } @else if $i == 7 {
+                                        left: #{math.div(974px, $lineWidth_pc) * 100%};
+                                        top: #{math.div(592px, $lineHeight_pc) * 100%};
+                                        $w: 154px;
+                                        $h: 52px;
+                                        @include getImgBoxSize($w, $h, $lineWidth_pc);
+                                        @include mob-width {
+                                            left: #{math.div(382px, $lineWidth_mb) * 100%};
+                                            top: #{math.div(966px, $lineHeight_mb) * 100%};
+                                            $w: 166px;
+                                            $h: 56px;
+                                            @include getImgBoxSize($w, $h, $lineWidth_mb);
+                                        }
+                                    } @else if $i == 8 {
+                                        left: #{math.div(1278px, $lineWidth_pc) * 100%};
+                                        top: #{math.div(557px, $lineHeight_pc) * 100%};
+                                        $w: 127px;
+                                        $h: 50px;
+                                        @include getImgBoxSize($w, $h, $lineWidth_pc);
+                                        @include mob-width {
+                                            left: #{math.div(104px, $lineWidth_mb) * 100%};
+                                            top: #{math.div(958px, $lineHeight_mb) * 100%};
+                                            $w: 139px;
+                                            $h: 53px;
+                                            @include getImgBoxSize($w, $h, $lineWidth_mb);
+                                        }
+                                    } @else if $i == 9 {
+                                        left: #{math.div(1514px, $lineWidth_pc) * 100%};
+                                        top: #{math.div(364px, $lineHeight_pc) * 100%};
+                                        $w: 128px;
+                                        $h: 50px;
+                                        @include getImgBoxSize($w, $h, $lineWidth_pc);
+                                        @include mob-width {
+                                            left: #{math.div(148px, $lineWidth_mb) * 100%};
+                                            top: #{math.div(1189px, $lineHeight_mb) * 100%};
+                                            $w: 138px;
+                                            $h: 51px;
+                                            @include getImgBoxSize($w, $h, $lineWidth_mb);
+                                        }
+                                    }
+                                    &-obj {
+                                        position: absolute;
+                                        left: 0;
+                                        top: 0;
+                                        right: 0;
+                                        bottom: 0;
+                                        background-size: 100%;
+                                        background-repeat: no-repeat;
+                                        background-position: center;
+                                        @if $i == 1 {
+                                            background-image: url(#{$imgCdnPath + 'pc/2013.png'});
+                                        } @else if $i == 2 {
+                                            background-image: url(#{$imgCdnPath + 'pc/2014.png'});
+                                        } @else if $i == 3 {
+                                            background-image: url(#{$imgCdnPath + 'pc/2015.png'});
+                                        } @else if $i == 4 {
+                                            background-image: url(#{$imgCdnPath + 'pc/2016.png'});
+                                        } @else if $i == 5 {
+                                            background-image: url(#{$imgCdnPath + 'pc/2017.png'});
+                                        } @else if $i == 6 {
+                                            background-image: url(#{$imgCdnPath + 'pc/2018.png'});
+                                        } @else if $i == 7 {
+                                            background-image: url(#{$imgCdnPath + 'pc/2019.png'});
+                                        } @else if $i == 8 {
+                                            background-image: url(#{$imgCdnPath + 'pc/2020.png'});
+                                        } @else if $i == 9 {
+                                            background-image: url(#{$imgCdnPath + 'pc/2021.png'});
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .lineDes {
+                        @for $i from 1 through 9 {
+                            .lineDes__#{$i} {
+                                &-anime {
+                                    position: absolute;
+                                    opacity: 0;
+                                    @if $i == 1 {
+                                        left: #{math.div(240px, $lineWidth_pc) * 100%};
+                                        top: #{math.div(624px, $lineHeight_pc) * 100%};
+                                        $w: 156px;
+                                        $h: 47px;
+                                        @include getImgBoxSize($w, $h, $lineWidth_pc);
+                                        @include mob-width {
+                                            left: #{math.div(110px, $lineWidth_mb) * 100%};
+                                            top: #{math.div(345px, $lineHeight_mb) * 100%};
+                                            $w: 140px;
+                                            $h: 42px;
+                                            @include getImgBoxSize($w, $h, $lineWidth_mb);
+                                        }
+                                    } @else if $i == 2 {
+                                        left: #{math.div(721px, $lineWidth_pc) * 100%};
+                                        top: #{math.div(107px, $lineHeight_pc) * 100%};
+                                        $w: 228px;
+                                        $h: 105px;
+                                        @include getImgBoxSize($w, $h, $lineWidth_pc);
+                                        @include mob-width {
+                                            left: #{math.div(394px, $lineWidth_mb) * 100%};
+                                            top: #{math.div(-34px, $lineHeight_mb) * 100%};
+                                            $w: 203px;
+                                            $h: 92px;
+                                            @include getImgBoxSize($w, $h, $lineWidth_mb);
+                                        }
+                                    } @else if $i == 3 {
+                                        left: #{math.div(445px, $lineWidth_pc) * 100%};
+                                        top: #{math.div(507px, $lineHeight_pc) * 100%};
+                                        $w: 198px;
+                                        $h: 48px;
+                                        @include getImgBoxSize($w, $h, $lineWidth_pc);
+                                        @include mob-width {
+                                            left: #{math.div(365px, $lineWidth_mb) * 100%};
+                                            top: #{math.div(198px, $lineHeight_mb) * 100%};
+                                            $w: 178px;
+                                            $h: 50px;
+                                            @include getImgBoxSize($w, $h, $lineWidth_mb);
+                                        }
+                                    } @else if $i == 4 {
+                                        left: #{math.div(1207px, $lineWidth_pc) * 100%};
+                                        top: #{math.div(200px, $lineHeight_pc) * 100%};
+                                        $w: 211px;
+                                        $h: 47px;
+                                        @include getImgBoxSize($w, $h, $lineWidth_pc);
+                                        @include mob-width {
+                                            left: #{math.div(182px, $lineWidth_mb) * 100%};
+                                            top: #{math.div(590px, $lineHeight_mb) * 100%};
+                                            $w: 189px;
+                                            $h: 45px;
+                                            @include getImgBoxSize($w, $h, $lineWidth_mb);
+                                        }
+                                    } @else if $i == 5 {
+                                        left: #{math.div(1229px, $lineWidth_pc) * 100%};
+                                        top: #{math.div(457px, $lineHeight_pc) * 100%};
+                                        $w: 185px;
+                                        $h: 48px;
+                                        @include getImgBoxSize($w, $h, $lineWidth_pc);
+                                        @include mob-width {
+                                            left: #{math.div(54px, $lineWidth_mb) * 100%};
+                                            top: #{math.div(852px, $lineHeight_mb) * 100%};
+                                            $w: 166px;
+                                            $h: 42px;
+                                            @include getImgBoxSize($w, $h, $lineWidth_mb);
+                                        }
+                                    } @else if $i == 6 {
+                                        left: #{math.div(587px, $lineWidth_pc) * 100%};
+                                        top: #{math.div(782px, $lineHeight_pc) * 100%};
+                                        $w: 212px;
+                                        $h: 48px;
+                                        @include getImgBoxSize($w, $h, $lineWidth_pc);
+                                        @include mob-width {
+                                            left: #{math.div(425px, $lineWidth_mb) * 100%};
+                                            top: #{math.div(726px, $lineHeight_mb) * 100%};
+                                            $w: 189px;
+                                            $h: 39px;
+                                            @include getImgBoxSize($w, $h, $lineWidth_mb);
+                                        }
+                                    } @else if $i == 7 {
+                                        left: #{math.div(941px, $lineWidth_pc) * 100%};
+                                        top: #{math.div(860px, $lineHeight_pc) * 100%};
+                                        $w: 211px;
+                                        $h: 47px;
+                                        @include getImgBoxSize($w, $h, $lineWidth_pc);
+                                        @include mob-width {
+                                            left: #{math.div(368px, $lineWidth_mb) * 100%};
+                                            top: #{math.div(1046px, $lineHeight_mb) * 100%};
+                                            $w: 190px;
+                                            $h: 42px;
+                                            @include getImgBoxSize($w, $h, $lineWidth_mb);
+                                        }
+                                    } @else if $i == 8 {
+                                        left: #{math.div(1290px, $lineWidth_pc) * 100%};
+                                        top: #{math.div(836px, $lineHeight_pc) * 100%};
+                                        $w: 102px;
+                                        $h: 47px;
+                                        @include getImgBoxSize($w, $h, $lineWidth_pc);
+                                        @include mob-width {
+                                            left: #{math.div(249px, $lineWidth_mb) * 100%};
+                                            top: #{math.div(1071px, $lineHeight_mb) * 100%};
+                                            $w: 91px;
+                                            $h: 42px;
+                                            @include getImgBoxSize($w, $h, $lineWidth_mb);
+                                        }
+                                    } @else if $i == 9 {
+                                        left: #{math.div(1522px, $lineWidth_pc) * 100%};
+                                        top: #{math.div(180px, $lineHeight_pc) * 100%};
+                                        $w: 102px;
+                                        $h: 47px;
+                                        @include getImgBoxSize($w, $h, $lineWidth_pc);
+                                        @include mob-width {
+                                            left: #{math.div(241px, $lineWidth_mb) * 100%};
+                                            top: #{math.div(1347px, $lineHeight_mb) * 100%};
+                                            $w: 91px;
+                                            $h: 42px;
+                                            @include getImgBoxSize($w, $h, $lineWidth_mb);
+                                        }
+                                    }
+                                    &-obj {
+                                        position: absolute;
+                                        left: 0;
+                                        top: 0;
+                                        right: 0;
+                                        bottom: 0;
+                                        background-size: 100%;
+                                        background-repeat: no-repeat;
+                                        background-position: center;
+                                        @if $i == 1 {
+                                            background-image: url(#{$imgCdnPath + 'pc/linedes1.png'});
+                                        } @else if $i == 2 {
+                                            background-image: url(#{$imgCdnPath + 'pc/linedes2.png'});
+                                        } @else if $i == 3 {
+                                            background-image: url(#{$imgCdnPath + 'pc/linedes3.png'});
+                                        } @else if $i == 4 {
+                                            background-image: url(#{$imgCdnPath + 'pc/linedes4.png'});
+                                        } @else if $i == 5 {
+                                            background-image: url(#{$imgCdnPath + 'pc/linedes5.png'});
+                                        } @else if $i == 6 {
+                                            background-image: url(#{$imgCdnPath + 'pc/linedes6.png'});
+                                            @include mob-width {
+                                                background-image: url(#{$imgCdnPath + 'mb/linedes6.png'});
+                                            }
+                                        } @else if $i == 7 {
+                                            background-image: url(#{$imgCdnPath + 'pc/linedes7.png'});
+                                        } @else if $i == 8 {
+                                            background-image: url(#{$imgCdnPath + 'pc/linedes8.png'});
+                                        } @else if $i == 9 {
+                                            background-image: url(#{$imgCdnPath + 'pc/linedes9.png'});
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &.bg6Layout {
+        padding-top: 20px;
+        position: relative;
+        overflow: hidden;
+        $bg3Width_pc: 1920px;
+        $bg3Height_pc: 250px;
+        $bg3Width_mb: $mobm-media;
+        $bg3Height_mb: 50px;
+        width: 100%;
+        z-index: 9;
+        pointer-events: none;
+        background: url(#{$imgCdnPath + 'pc/bg3.jpg'}) no-repeat center;
+        background-size: 100%;
+        > .height {
+            display: block;
+            padding-bottom: #{math.div($bg3Height_pc, $bg3Width_pc) * 100%};
+            @include mob-width {
+                padding-bottom: #{math.div($bg3Height_mb, $bg3Width_mb) * 100%};
+            }
+        }
+    }
+
+    &.instruction {
+        $boxWidth_pc: 1920px;
+        $boxWidth_mb: 640px;
+        padding-bottom: 5%;
+        position: relative;
+        z-index: 2;
+        .title {
+            position: relative;
+            font-size: 53px;
+            font-family: 'mplus';
+            text-align: center;
+            color: #614131;
+            line-height: 2.84;
+            letter-spacing: 5.3px;
+            @include mob-width {
+                font-size: 45px;
+                line-height: 3.34;
+                letter-spacing: 4.5px;
+            }
+            @include mobs-width {
+                font-size: 34px;
+            }
+        }
+        .contain {
+            max-width: 1200px;
+            width: 95%;
+            position: relative;
+            margin: 92px auto auto auto;
+            @include mob-width {
+                max-width: 565px;
+                margin: 0px auto auto auto;
+            }
+            @include mobs-width {
+                width: auto;
+                margin: auto 20px;
+            }
+            .date {
+                display: inline;
+                line-height: 1.77;
+                @include mob-width {
+                    display: flex;
+                    flex-direction: column;
+                }
+                .dateTitle {
+                    font-size: 31.5px;
+                    font-family: $fontfamily4;
+                    font-weight: bold;
+                    color: #614131;
+                    vertical-align: middle;
+                    letter-spacing: 0.63px;
+                    @include mob-width {
+                        font-size: 27.5px;
+                    }
+                    @include mobs-width {
+                        font-size: 20px;
+                    }
+                }
+                .dateDes {
+                    font-size: 23.5px;
+                    font-family: 'acumin';
+                    font-weight: 500;
+                    color: #614131;
+                    vertical-align: middle;
+                    letter-spacing: 0.47px;
+                    @include mob-width {
+                        font-size: 20.5px;
+                    }
+                    @include mobs-width {
+                        font-size: 14px;
+                        line-height: 1.6;
+                    }
+                }
+            }
+            .detail {
+                margin-top: 59px;
+                line-height: 2.11;
+                @include mob-width {
+                    margin-top: 54px;
+                }
+                @include mobs-width {
+                    margin-top: 20px;
+                }
+                .detailTile {
+                    font-size: 31.5px;
+                    font-family: $fontfamily4;
+                    font-weight: bold;
+                    color: #614131;
+                    vertical-align: middle;
+                    letter-spacing: 0.63px;
+                    @include mob-width {
+                        font-size: 27.5px;
+                    }
+                    @include mobs-width {
+                        font-size: 20px;
+                    }
+                }
+                .detailDes {
+                    ul {
+                        li {
+                            span {
+                                width: 20px;
+                                margin-right: 10px;
+                            }
+                            color: #614131;
+                            font-size: 23.5px;
+                            font-family: 'acumin';
+                            font-weight: 500;
+                            margin-left: 0;
+                            display: flex;
+                            letter-spacing: 0.51px;
+                            @include mob-width {
+                                font-size: 20.5px;
+                            }
+                            @include mobs-width {
+                                font-size: 14px;
+                                line-height: 1.6;
+                            }
+                        }
+                    }
+                }
+            }
+            .receive {
+                margin-top: 69px;
+                line-height: 2.11;
+                @include mob-width {
+                    margin-top: 66px;
+                }
+                @include mobs-width {
+                    margin-top: 20px;
+                }
+                .receiveTitle {
+                    font-size: 31.5px;
+                    font-family: $fontfamily4;
+                    font-weight: bold;
+                    color: #614131;
+                    vertical-align: middle;
+                    letter-spacing: 0.63px;
+                    @include mob-width {
+                        font-size: 27.5px;
+                    }
+                    @include mobs-width {
+                        font-size: 20px;
+                    }
+                }
+                .receiveDes {
+                    ul {
+                        li {
+                            span {
+                                width: 20px;
+                                margin-right: 10px;
+                            }
+                            color: #614131;
+                            font-size: 23.5px;
+                            font-family: 'acumin';
+                            font-weight: 500;
+                            margin-left: 0;
+                            display: flex;
+                            letter-spacing: 0.51px;
+                            @include mob-width {
+                                font-size: 20.5px;
+                            }
+                            @include mobs-width {
+                                font-size: 14px;
+                                line-height: 1.6;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &.popResult {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        z-index: 9;
+        background-size: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        $popWidth_pc: 1024px;
+        $popHeight_pc: 823px;
+        $popWidth_mb: $mobm-media;
+        $popHeight_mb: 862px;
+        // > .height {
+        //     display: block;
+        //     padding-bottom: #{math.div($bg3Height_pc, $bg3Width_pc) * 100%};
+        //     @include mob-width {
+        //         padding-bottom: #{math.div($bg3Height_mb, $bg3Width_mb) * 100%};
+        //     }
+        // }
+        .closeCard {
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            width: 100%;
+            position: absolute;
+        }
+        .popcard {
+            position: absolute;
+            transform: translate(-50%, -50%);
+            top: 50%;
+            left: 50%;
+            max-width: 1024px;
+            width: 100%;
+            // height: 100%;
+            $w: $popWidth_pc;
+            $h: 648.2707px;
+            @include getImgBoxSize($w, $h, -1);
+            @include mob-width {
+                $w: 580px;
+                $h: 862px;
+                @include getImgBoxSize($w, $h, $popWidth_mb);
+            }
+            &-anime {
+                transform-origin: center;
+                transform: scale(0);
+                opacity: 0;
+                position: absolute;
+                left: 0;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                display: block;
+                &-obj {
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    background: url(#{$imgCdnPath + 'pc/card-PC-2.jpg'}) no-repeat center;
+                    background-size: 100%;
+                    border-radius: 17px;
+                    @include mob-width {
+                        background: url(#{$imgCdnPath + 'mb/card-MB-2.jpg'}) no-repeat center;
+                        background-size: 100%;
+                    }
+                    .downloadBtn {
+                        &-anime {
+                            position: absolute;
+                            cursor: pointer;
+                            left: #{math.div(740px, $popWidth_pc) * 100%};
+                            top: #{math.div(720px, $popHeight_pc) * 100%};
+                            $w: 166px;
+                            $h: 58px;
+                            @include getImgBoxSize($w, $h, $popWidth_pc);
+                            display: block;
+                            transition: ease 0.2s;
+                            @include mob-width {
+                                left: #{math.div(400px, $popWidth_mb) * 100%};
+                                top: #{math.div(785px, $popHeight_mb) * 100%};
+                                $w: 142px;
+                                $h: 49.6144px;
+                                @include getImgBoxSize($w, $h, $popWidth_mb);
+                            }
+                            &:hover {
+                                transform: scale(1.05);
+                            }
+                            &-obj {
+                                position: absolute;
+                                left: 0;
+                                top: 0;
+                                right: 0;
+                                bottom: 0;
+                                background: url(#{$imgCdnPath + 'pc/card-butten.png'}) no-repeat center;
+                                background-size: 100%;
+                                border-radius: 17px;
+                            }
+                        }
+                    }
+                    .closeBtn1 {
+                        position: absolute;
+                        right: 20px;
+                        top: 20px;
+                        width: 30px;
+                        height: 30px;
+                        cursor: pointer;
+                        &::after {
+                            content: '';
+                            position: absolute;
+                            width: 30px;
+                            height: 1px;
+                            top: 50%;
+                            background: #000;
+                            transform: rotate(-45deg);
+                        }
+                        &::before {
+                            content: '';
+                            position: absolute;
+                            width: 30px;
+                            height: 1px;
+                            top: 50%;
+                            background: #000;
+                            transform: rotate(45deg);
+                        }
+                    }
+                }
+            }
+        }
+        .popplay {
+            position: absolute;
+            transform: translate(-50%, -50%);
+            top: 50%;
+            left: 50%;
+            max-width: 340px;
+            width: 100%;
+            // height: 100%;
+            $w: 640px;
+            $h: 823px;
+            //pointer-events: none;
+            @include getImgBoxSize($w, $h, -1);
+            @include mob-width {
+                max-width: 500px;
+                $w: 500px;
+                $h: 640.625px;
+                @include getImgBoxSize($w, $h, $popWidth_mb);
+            }
+            &-anime {
+                transform-origin: center;
+                transform: scale(0);
+                opacity: 0;
+                position: absolute;
+                left: 0;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                display: block;
+                &-obj {
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    background: url(#{$imgCdnPath + 'pc/message_box-2.png'}) no-repeat center;
+                    background-size: 100%;
+                    border-radius: 17px;
+                    .closeBtn2 {
+                        position: absolute;
+                        right: 20px;
+                        top: 20px;
+                        width: 30px;
+                        height: 30px;
+                        cursor: pointer;
+                        &::after {
+                            content: '';
+                            position: absolute;
+                            width: 30px;
+                            height: 1px;
+                            top: 50%;
+                            background: #000;
+                            transform: rotate(-45deg);
+                        }
+                        &::before {
+                            content: '';
+                            position: absolute;
+                            width: 30px;
+                            height: 1px;
+                            top: 50%;
+                            background: #000;
+                            transform: rotate(45deg);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.contentWrap {
+    @include mob-width {
+        margin: 0 25px !important;
+        max-width: 100% !important;
+    }
+}
+.flagBox {
+    position: relative;
+    > .stick {
+        position: relative;
+        border-top: 35px solid #e283b9;
+        border-right: 12.5px solid transparent;
+        border-left: 12.5px solid transparent;
+        border-bottom: 0 solid transparent;
+        margin-top: -17%;
+        display: block;
+        display: none;
+        // transform: scaleY(0);
+        transform-origin: 50% 100%;
+        // @include mob-width {
+        //   height: 75px;
+        // }
+        @include mobs-width {
+            border-top: 19px solid #e283b9;
+            border-right: 6.5px solid transparent;
+            border-left: 6.5px solid transparent;
+        }
+    }
+    > .flag {
+        position: relative;
+        width: 98px;
+        height: 82px;
+        transform-origin: 0% 50%;
+        // background-color: #e283b9;
+        // border-radius: 50%;
+        background-image: url(#{$imgCdnPath + 'pc/cloud-pin.png'});
+        background-size: contain;
+        background-position: center center;
+        background-repeat: no-repeat;
+
+        font-size: 39px;
+        font-weight: 500;
+        letter-spacing: -0.98px;
+        text-align: center;
+        color: #ffffff;
+        font-family: $fontfamily4;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        // @include mob-width {
+        //   width: 47px;
+        //   height: 38px;
+        //   margin-left: 3px;
+        // }
+
+        .num {
+            transform: translateY(-14%);
+        }
+        @include mobs-width {
+            width: 36px;
+            height: 30px;
+            font-size: 20px;
+        }
+    }
+}
+.board-box {
+    overflow: hidden;
+    border-radius: 100px;
+    box-shadow: inset 0px 5px 9px 1px rgba(255, 254, 247, 0.5);
+    background-color: #fffbe7;
+    padding-bottom: 26px;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include mob-width {
+        border-radius: 50px;
+    }
+    $boxWidth_pc: 1080px;
+    $boxWidth_mb: 590px;
+
+    .FRAME-DE-L {
+        &-anime {
+            z-index: -1;
+            position: absolute;
+            left: #{math.div(0px, $boxWidth_pc) * 100%};
+            bottom: 0;
+            $w: 383px;
+            $h: 279px;
+            @include getImgBoxSize($w, $h, $boxWidth_pc);
+            @include mob-width {
+                left: #{math.div(-110px, $boxWidth_mb) * 100%};
+                bottom: -4%;
+                @include getImgBoxSize($w, $h, $boxWidth_mb);
+            }
+        }
+        &-obj {
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            background: url(#{$imgCdnPath + 'pc/FRAME-DE-L.png'}) no-repeat center;
+            background-size: 100%;
+        }
+    }
+    .FRAME-DE-R {
+        &-anime {
+            z-index: -1;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            $w: 383px;
+            $h: 279px;
+            @include getImgBoxSize($w, $h, $boxWidth_pc);
+            @include mob-width {
+                right: -18.6440677966%;
+                bottom: -4%;
+                @include getImgBoxSize($w, $h, $boxWidth_mb);
+            }
+        }
+        &-obj {
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            background: url(#{$imgCdnPath + 'pc/FRAME-DE-R.png'}) no-repeat center;
+            background-size: 100%;
+        }
+    }
+}
+.mainContent {
+    position: relative;
+    z-index: 9;
+    background-image: url(#{$imgCdnPath + 'pc/bg-body.jpg'});
+    background-size: cover;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    @include mob-width {
+        background-image: url(#{$imgCdnPath + 'mb/bg-body.jpg'});
+    }
+}
+
+.loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    &__bg {
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #000;
+        opacity: 0.2;
+    }
+    &__img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+$deg: 360deg;
+@keyframes snowflake_fade {
+    0% {
+        opacity: 0;
+        transform: scale(0.3) rotate(0deg);
+    }
+    10% {
+        opacity: 1;
+        transform: scale(1) rotate($deg * 0.2);
+    }
+    37.5% {
+        opacity: 1;
+        transform: scale(1) rotate($deg * 0.75);
+    }
+    50% {
+        opacity: 0;
+        transform: scale(0.3) rotate($deg);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0.3) rotate($deg);
+    }
+}
+
+@keyframes snowflake_rotate {
+    0% {
+        transform: none;
+        opacity: 1;
+    }
+    10% {
+        opacity: 1;
+    }
+    37.5% {
+        opacity: 1;
+    }
+    50% {
+        transform: rotate(360deg);
+        opacity: 1;
+    }
+    100% {
+        transform: rotate(360deg);
+        opacity: 1;
+    }
+}
